@@ -15,6 +15,7 @@ Swift・XcodeのTIps集
 | [ShoppingCart](./ShoppingCart)               | Firebaseで作るShoppingCart          |   Firebase                       |
 | [SimpleMessageKit](./SimpleMessageKit)               |   MessageKitを使ったサンプル        |  MessageKit                       |
 | [SwiftDelegate](./SwiftDelegate)               | SwiftDelegate          |   Delegate                       |
+| [TabBarController](./TabBarController) | UITabBarControllerを使った画面遷移        | UITabBarController                      |
 | [TableViewCustomCell](./TableViewCustomCell) | .xibを使ったTableViewのCustomCell        | xib                      |
 | [TaskApp](./TaskApp) | SwiftUIとCoreDataを使ったタスク投稿        | SwiftUI,CoreData                   |
 | [TextFieldKeybord](./TextFieldKeybord)       | TextField での入力キーボード位置調整     |                          |

@@ -7,6 +7,14 @@
 
 import UIKit
 
+/*
+参考サイト
+https://studio.beatnix.co.jp/develop/swift/image-zoom-gesture
+ 
+ 
+ 
+ */
+
 class ViewController: UIViewController {
     
     @IBOutlet weak var imageView: UIImageView!
@@ -130,15 +138,15 @@ class ViewController: UIViewController {
             // 現在の拡大率を取得する
             let currentScale = sqrt(abs(imageView.transform.a * imageView.transform.d - imageView.transform.b * imageView.transform.c))
             
-//            // 初期サイズより小さい場合は、初期サイズに戻す
-//            if currentScale < 1.0 {
-//                UIView.animate(withDuration: 0.2, delay: 0.0, options: UIView.AnimationOptions.curveEaseOut, animations: {() -> Void in
-//                    self.imageView.center = CGPoint(x: self.size.width / 2, y: self.size.height / 2)
-//                    self.imageView.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
-//
-//                }, completion: {(finished: Bool) -> Void in
-//                })
-//            }
+            // 初期サイズより小さい場合は、初期サイズに戻す
+            if currentScale < 1.0 {
+                UIView.animate(withDuration: 0.2, delay: 0.0, options: UIView.AnimationOptions.curveEaseOut, animations: {() -> Void in
+                    self.imageView.center = CGPoint(x: UIScreen.main.bounds.size.width / 2, y: UIScreen.main.bounds.size.height / 2)
+                    self.imageView.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+
+                }, completion: {(finished: Bool) -> Void in
+                })
+            }
         }
         
     }

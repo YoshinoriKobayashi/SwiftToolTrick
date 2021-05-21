@@ -10,9 +10,9 @@ import UIKit
 /*
 参考サイト
 https://studio.beatnix.co.jp/develop/swift/image-zoom-gesture
+https://program-life.com/519
  
- 
- 
+
  */
 
 class ViewController: UIViewController {

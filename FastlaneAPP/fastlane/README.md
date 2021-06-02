@@ -19,7 +19,12 @@ or alternatively using `brew install fastlane`
 ```
 fastlane beta
 ```
-
+Build iOS application
+### deploy_firebase
+```
+fastlane deploy_firebase
+```
+Upload to firebase app distribution
 
 ----
 

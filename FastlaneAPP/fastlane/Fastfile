@@ -22,6 +22,22 @@
 #   end
 # end
 
+desc 'Build iOS application'
 lane :beta do
-  build_app(scheme: "FastlaneAPP")
+  build_app(
+    scheme: "FastlaneAPP",
+    xcargs: "-allowProvisioningUpdates",
+    output_directory: 'build',
+  )
+end
+
+desc 'Upload to firebase app distribution'
+lane :deploy_firebase do
+   firebase_app_distribution(
+     app: "1:337216137543:ios:864e8ec127962e86544462",
+     firebase_cli_token: "1//0en3fntUvNS8OCgYIARAAGA4SNwF-L9IreZ9ixnelwKmACoI-11j7Y62D_jTYNuttrgq7jg8QC8x3SkpFZ1cpVVA5Lga43DNT4Ww",
+     groups: "tctester",
+     ipa_path: "build/FastlaneAPP.ipa",
+     release_notes: "Text of release notes"
+)
 end

@@ -7,23 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		80C5C714265DD735008E91A9 /* FastlaneAPPApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C5C713265DD735008E91A9 /* FastlaneAPPApp.swift */; };
-		80C5C716265DD735008E91A9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C5C715265DD735008E91A9 /* ContentView.swift */; };
-		80C5C718265DD736008E91A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80C5C717265DD736008E91A9 /* Assets.xcassets */; };
-		80C5C71B265DD736008E91A9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80C5C71A265DD736008E91A9 /* Preview Assets.xcassets */; };
+		80A7BF62266B5564005F4D8A /* MyOkashiCustomApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A7BF61266B5564005F4D8A /* MyOkashiCustomApp.swift */; };
+		80A7BF64266B5564005F4D8A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A7BF63266B5564005F4D8A /* ContentView.swift */; };
+		80A7BF66266B5565005F4D8A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80A7BF65266B5565005F4D8A /* Assets.xcassets */; };
+		80A7BF69266B5565005F4D8A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80A7BF68266B5565005F4D8A /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		80C5C710265DD735008E91A9 /* FastlaneAPP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FastlaneAPP.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		80C5C713265DD735008E91A9 /* FastlaneAPPApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FastlaneAPPApp.swift; sourceTree = "<group>"; };
-		80C5C715265DD735008E91A9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		80C5C717265DD736008E91A9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		80C5C71A265DD736008E91A9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		80C5C71C265DD736008E91A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		80A7BF5E266B5564005F4D8A /* MyOkashiCustom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyOkashiCustom.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		80A7BF61266B5564005F4D8A /* MyOkashiCustomApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyOkashiCustomApp.swift; sourceTree = "<group>"; };
+		80A7BF63266B5564005F4D8A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		80A7BF65266B5565005F4D8A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		80A7BF68266B5565005F4D8A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		80A7BF6A266B5565005F4D8A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		80C5C70D265DD735008E91A9 /* Frameworks */ = {
+		80A7BF5B266B5564005F4D8A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -33,38 +33,38 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		80C5C707265DD735008E91A9 = {
+		80A7BF55266B5564005F4D8A = {
 			isa = PBXGroup;
 			children = (
-				80C5C712265DD735008E91A9 /* FastlaneAPP */,
-				80C5C711265DD735008E91A9 /* Products */,
+				80A7BF60266B5564005F4D8A /* MyOkashiCustom */,
+				80A7BF5F266B5564005F4D8A /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		80C5C711265DD735008E91A9 /* Products */ = {
+		80A7BF5F266B5564005F4D8A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				80C5C710265DD735008E91A9 /* FastlaneAPP.app */,
+				80A7BF5E266B5564005F4D8A /* MyOkashiCustom.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		80C5C712265DD735008E91A9 /* FastlaneAPP */ = {
+		80A7BF60266B5564005F4D8A /* MyOkashiCustom */ = {
 			isa = PBXGroup;
 			children = (
-				80C5C713265DD735008E91A9 /* FastlaneAPPApp.swift */,
-				80C5C715265DD735008E91A9 /* ContentView.swift */,
-				80C5C717265DD736008E91A9 /* Assets.xcassets */,
-				80C5C71C265DD736008E91A9 /* Info.plist */,
-				80C5C719265DD736008E91A9 /* Preview Content */,
+				80A7BF61266B5564005F4D8A /* MyOkashiCustomApp.swift */,
+				80A7BF63266B5564005F4D8A /* ContentView.swift */,
+				80A7BF65266B5565005F4D8A /* Assets.xcassets */,
+				80A7BF6A266B5565005F4D8A /* Info.plist */,
+				80A7BF67266B5565005F4D8A /* Preview Content */,
 			);
-			path = FastlaneAPP;
+			path = MyOkashiCustom;
 			sourceTree = "<group>";
 		};
-		80C5C719265DD736008E91A9 /* Preview Content */ = {
+		80A7BF67266B5565005F4D8A /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
-				80C5C71A265DD736008E91A9 /* Preview Assets.xcassets */,
+				80A7BF68266B5565005F4D8A /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -72,38 +72,38 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		80C5C70F265DD735008E91A9 /* FastlaneAPP */ = {
+		80A7BF5D266B5564005F4D8A /* MyOkashiCustom */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 80C5C71F265DD736008E91A9 /* Build configuration list for PBXNativeTarget "FastlaneAPP" */;
+			buildConfigurationList = 80A7BF6D266B5565005F4D8A /* Build configuration list for PBXNativeTarget "MyOkashiCustom" */;
 			buildPhases = (
-				80C5C70C265DD735008E91A9 /* Sources */,
-				80C5C70D265DD735008E91A9 /* Frameworks */,
-				80C5C70E265DD735008E91A9 /* Resources */,
+				80A7BF5A266B5564005F4D8A /* Sources */,
+				80A7BF5B266B5564005F4D8A /* Frameworks */,
+				80A7BF5C266B5564005F4D8A /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = FastlaneAPP;
-			productName = FastlaneAPP;
-			productReference = 80C5C710265DD735008E91A9 /* FastlaneAPP.app */;
+			name = MyOkashiCustom;
+			productName = MyOkashiCustom;
+			productReference = 80A7BF5E266B5564005F4D8A /* MyOkashiCustom.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		80C5C708265DD735008E91A9 /* Project object */ = {
+		80A7BF56266B5564005F4D8A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1250;
 				LastUpgradeCheck = 1250;
 				TargetAttributes = {
-					80C5C70F265DD735008E91A9 = {
+					80A7BF5D266B5564005F4D8A = {
 						CreatedOnToolsVersion = 12.5;
 					};
 				};
 			};
-			buildConfigurationList = 80C5C70B265DD735008E91A9 /* Build configuration list for PBXProject "FastlaneAPP" */;
+			buildConfigurationList = 80A7BF59266B5564005F4D8A /* Build configuration list for PBXProject "MyOkashiCustom" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -111,42 +111,42 @@
 				en,
 				Base,
 			);
-			mainGroup = 80C5C707265DD735008E91A9;
-			productRefGroup = 80C5C711265DD735008E91A9 /* Products */;
+			mainGroup = 80A7BF55266B5564005F4D8A;
+			productRefGroup = 80A7BF5F266B5564005F4D8A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				80C5C70F265DD735008E91A9 /* FastlaneAPP */,
+				80A7BF5D266B5564005F4D8A /* MyOkashiCustom */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		80C5C70E265DD735008E91A9 /* Resources */ = {
+		80A7BF5C266B5564005F4D8A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				80C5C71B265DD736008E91A9 /* Preview Assets.xcassets in Resources */,
-				80C5C718265DD736008E91A9 /* Assets.xcassets in Resources */,
+				80A7BF69266B5565005F4D8A /* Preview Assets.xcassets in Resources */,
+				80A7BF66266B5565005F4D8A /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		80C5C70C265DD735008E91A9 /* Sources */ = {
+		80A7BF5A266B5564005F4D8A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				80C5C716265DD735008E91A9 /* ContentView.swift in Sources */,
-				80C5C714265DD735008E91A9 /* FastlaneAPPApp.swift in Sources */,
+				80A7BF64266B5564005F4D8A /* ContentView.swift in Sources */,
+				80A7BF62266B5564005F4D8A /* MyOkashiCustomApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		80C5C71D265DD736008E91A9 /* Debug */ = {
+		80A7BF6B266B5565005F4D8A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -207,7 +207,7 @@
 			};
 			name = Debug;
 		};
-		80C5C71E265DD736008E91A9 /* Release */ = {
+		80A7BF6C266B5565005F4D8A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -262,49 +262,45 @@
 			};
 			name = Release;
 		};
-		80C5C720265DD736008E91A9 /* Debug */ = {
+		80A7BF6E266B5565005F4D8A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_ASSET_PATHS = "\"FastlaneAPP/Preview Content\"";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"MyOkashiCustom/Preview Content\"";
 				DEVELOPMENT_TEAM = 69U32QXGLT;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = FastlaneAPP/Info.plist;
+				INFOPLIST_FILE = MyOkashiCustom/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "Swift-Beginners.FastlaneAPP";
+				PRODUCT_BUNDLE_IDENTIFIER = "Swift-Beginners.MyOkashiCustom";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = FastlaneAPP_iOS_Development;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		80C5C721265DD736008E91A9 /* Release */ = {
+		80A7BF6F266B5565005F4D8A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_ASSET_PATHS = "\"FastlaneAPP/Preview Content\"";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"MyOkashiCustom/Preview Content\"";
 				DEVELOPMENT_TEAM = 69U32QXGLT;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = FastlaneAPP/Info.plist;
+				INFOPLIST_FILE = MyOkashiCustom/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "Swift-Beginners.FastlaneAPP";
+				PRODUCT_BUNDLE_IDENTIFIER = "Swift-Beginners.MyOkashiCustom";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = FastlaneAPP_iOS_Development;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -313,25 +309,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		80C5C70B265DD735008E91A9 /* Build configuration list for PBXProject "FastlaneAPP" */ = {
+		80A7BF59266B5564005F4D8A /* Build configuration list for PBXProject "MyOkashiCustom" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				80C5C71D265DD736008E91A9 /* Debug */,
-				80C5C71E265DD736008E91A9 /* Release */,
+				80A7BF6B266B5565005F4D8A /* Debug */,
+				80A7BF6C266B5565005F4D8A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		80C5C71F265DD736008E91A9 /* Build configuration list for PBXNativeTarget "FastlaneAPP" */ = {
+		80A7BF6D266B5565005F4D8A /* Build configuration list for PBXNativeTarget "MyOkashiCustom" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				80C5C720265DD736008E91A9 /* Debug */,
-				80C5C721265DD736008E91A9 /* Release */,
+				80A7BF6E266B5565005F4D8A /* Debug */,
+				80A7BF6F266B5565005F4D8A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 80C5C708265DD735008E91A9 /* Project object */;
+	rootObject = 80A7BF56266B5564005F4D8A /* Project object */;
 }

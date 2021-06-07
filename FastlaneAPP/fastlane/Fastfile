@@ -28,7 +28,14 @@ lane :beta do
     scheme: "FastlaneAPP",
     xcargs: "-allowProvisioningUpdates",
     output_directory: 'build',
-  )
+    codesigning_identity:"iOS Developer",
+    export_options: {
+      method: "development",
+      provisioningProfiles: { 
+        "Swift-Beginners.FastlaneAPP" => "FastlaneAPP_iOS_Development"
+      }
+    } 
+ )
 end
 
 desc 'Upload to firebase app distribution'

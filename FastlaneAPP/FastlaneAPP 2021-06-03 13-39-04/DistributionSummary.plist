@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>FastlaneAPP.ipa</key>
+	<array>
+		<dict>
+			<key>architectures</key>
+			<array>
+				<string>arm64</string>
+			</array>
+			<key>certificate</key>
+			<dict>
+				<key>SHA1</key>
+				<string>04D5B38B94BE225B7F7AA2E9516F02166C1EE986</string>
+				<key>dateExpires</key>
+				<string>2022/06/01</string>
+				<key>type</key>
+				<string>iOS Development</string>
+			</dict>
+			<key>entitlements</key>
+			<dict>
+				<key>application-identifier</key>
+				<string>69U32QXGLT.Swift-Beginners.FastlaneAPP</string>
+				<key>com.apple.developer.team-identifier</key>
+				<string>69U32QXGLT</string>
+				<key>get-task-allow</key>
+				<true/>
+				<key>keychain-access-groups</key>
+				<array>
+					<string>69U32QXGLT.Swift-Beginners.FastlaneAPP</string>
+				</array>
+			</dict>
+			<key>name</key>
+			<string>FastlaneAPP.app</string>
+			<key>profile</key>
+			<dict>
+				<key>UUID</key>
+				<string>ae399b9e-7440-4b75-be6a-02d19d3ce14c</string>
+				<key>name</key>
+				<string>FastlaneAPP_iOS_Development</string>
+			</dict>
+			<key>team</key>
+			<dict>
+				<key>id</key>
+				<string>69U32QXGLT</string>
+				<key>name</key>
+				<string>Kanako Kobayashi</string>
+			</dict>
+		</dict>
+	</array>
+</dict>
+</plist>

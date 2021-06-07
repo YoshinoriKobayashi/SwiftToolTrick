@@ -7,23 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		80C5C714265DD735008E91A9 /* FastlaneAPPApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C5C713265DD735008E91A9 /* FastlaneAPPApp.swift */; };
-		80C5C716265DD735008E91A9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C5C715265DD735008E91A9 /* ContentView.swift */; };
-		80C5C718265DD736008E91A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80C5C717265DD736008E91A9 /* Assets.xcassets */; };
-		80C5C71B265DD736008E91A9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80C5C71A265DD736008E91A9 /* Preview Assets.xcassets */; };
+		803219BC2669EBC3007CEB6A /* SwiftUINavigationViewApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803219BB2669EBC3007CEB6A /* SwiftUINavigationViewApp.swift */; };
+		803219BE2669EBC3007CEB6A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803219BD2669EBC3007CEB6A /* ContentView.swift */; };
+		803219C02669EBC4007CEB6A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 803219BF2669EBC4007CEB6A /* Assets.xcassets */; };
+		803219C32669EBC4007CEB6A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 803219C22669EBC4007CEB6A /* Preview Assets.xcassets */; };
+		803219CB2669F753007CEB6A /* NavigationView1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803219CA2669F753007CEB6A /* NavigationView1.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		80C5C710265DD735008E91A9 /* FastlaneAPP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FastlaneAPP.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		80C5C713265DD735008E91A9 /* FastlaneAPPApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FastlaneAPPApp.swift; sourceTree = "<group>"; };
-		80C5C715265DD735008E91A9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		80C5C717265DD736008E91A9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		80C5C71A265DD736008E91A9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		80C5C71C265DD736008E91A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		803219B82669EBC3007CEB6A /* SwiftUINavigationView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUINavigationView.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		803219BB2669EBC3007CEB6A /* SwiftUINavigationViewApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUINavigationViewApp.swift; sourceTree = "<group>"; };
+		803219BD2669EBC3007CEB6A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		803219BF2669EBC4007CEB6A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		803219C22669EBC4007CEB6A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		803219C42669EBC4007CEB6A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		803219CA2669F753007CEB6A /* NavigationView1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationView1.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		80C5C70D265DD735008E91A9 /* Frameworks */ = {
+		803219B52669EBC3007CEB6A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -33,38 +35,39 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		80C5C707265DD735008E91A9 = {
+		803219AF2669EBC3007CEB6A = {
 			isa = PBXGroup;
 			children = (
-				80C5C712265DD735008E91A9 /* FastlaneAPP */,
-				80C5C711265DD735008E91A9 /* Products */,
+				803219BA2669EBC3007CEB6A /* SwiftUINavigationView */,
+				803219B92669EBC3007CEB6A /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		80C5C711265DD735008E91A9 /* Products */ = {
+		803219B92669EBC3007CEB6A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				80C5C710265DD735008E91A9 /* FastlaneAPP.app */,
+				803219B82669EBC3007CEB6A /* SwiftUINavigationView.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		80C5C712265DD735008E91A9 /* FastlaneAPP */ = {
+		803219BA2669EBC3007CEB6A /* SwiftUINavigationView */ = {
 			isa = PBXGroup;
 			children = (
-				80C5C713265DD735008E91A9 /* FastlaneAPPApp.swift */,
-				80C5C715265DD735008E91A9 /* ContentView.swift */,
-				80C5C717265DD736008E91A9 /* Assets.xcassets */,
-				80C5C71C265DD736008E91A9 /* Info.plist */,
-				80C5C719265DD736008E91A9 /* Preview Content */,
+				803219BB2669EBC3007CEB6A /* SwiftUINavigationViewApp.swift */,
+				803219BD2669EBC3007CEB6A /* ContentView.swift */,
+				803219CA2669F753007CEB6A /* NavigationView1.swift */,
+				803219BF2669EBC4007CEB6A /* Assets.xcassets */,
+				803219C42669EBC4007CEB6A /* Info.plist */,
+				803219C12669EBC4007CEB6A /* Preview Content */,
 			);
-			path = FastlaneAPP;
+			path = SwiftUINavigationView;
 			sourceTree = "<group>";
 		};
-		80C5C719265DD736008E91A9 /* Preview Content */ = {
+		803219C12669EBC4007CEB6A /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
-				80C5C71A265DD736008E91A9 /* Preview Assets.xcassets */,
+				803219C22669EBC4007CEB6A /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -72,38 +75,38 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		80C5C70F265DD735008E91A9 /* FastlaneAPP */ = {
+		803219B72669EBC3007CEB6A /* SwiftUINavigationView */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 80C5C71F265DD736008E91A9 /* Build configuration list for PBXNativeTarget "FastlaneAPP" */;
+			buildConfigurationList = 803219C72669EBC4007CEB6A /* Build configuration list for PBXNativeTarget "SwiftUINavigationView" */;
 			buildPhases = (
-				80C5C70C265DD735008E91A9 /* Sources */,
-				80C5C70D265DD735008E91A9 /* Frameworks */,
-				80C5C70E265DD735008E91A9 /* Resources */,
+				803219B42669EBC3007CEB6A /* Sources */,
+				803219B52669EBC3007CEB6A /* Frameworks */,
+				803219B62669EBC3007CEB6A /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = FastlaneAPP;
-			productName = FastlaneAPP;
-			productReference = 80C5C710265DD735008E91A9 /* FastlaneAPP.app */;
+			name = SwiftUINavigationView;
+			productName = SwiftUINavigationView;
+			productReference = 803219B82669EBC3007CEB6A /* SwiftUINavigationView.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		80C5C708265DD735008E91A9 /* Project object */ = {
+		803219B02669EBC3007CEB6A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1250;
 				LastUpgradeCheck = 1250;
 				TargetAttributes = {
-					80C5C70F265DD735008E91A9 = {
+					803219B72669EBC3007CEB6A = {
 						CreatedOnToolsVersion = 12.5;
 					};
 				};
 			};
-			buildConfigurationList = 80C5C70B265DD735008E91A9 /* Build configuration list for PBXProject "FastlaneAPP" */;
+			buildConfigurationList = 803219B32669EBC3007CEB6A /* Build configuration list for PBXProject "SwiftUINavigationView" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -111,42 +114,43 @@
 				en,
 				Base,
 			);
-			mainGroup = 80C5C707265DD735008E91A9;
-			productRefGroup = 80C5C711265DD735008E91A9 /* Products */;
+			mainGroup = 803219AF2669EBC3007CEB6A;
+			productRefGroup = 803219B92669EBC3007CEB6A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				80C5C70F265DD735008E91A9 /* FastlaneAPP */,
+				803219B72669EBC3007CEB6A /* SwiftUINavigationView */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		80C5C70E265DD735008E91A9 /* Resources */ = {
+		803219B62669EBC3007CEB6A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				80C5C71B265DD736008E91A9 /* Preview Assets.xcassets in Resources */,
-				80C5C718265DD736008E91A9 /* Assets.xcassets in Resources */,
+				803219C32669EBC4007CEB6A /* Preview Assets.xcassets in Resources */,
+				803219C02669EBC4007CEB6A /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		80C5C70C265DD735008E91A9 /* Sources */ = {
+		803219B42669EBC3007CEB6A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				80C5C716265DD735008E91A9 /* ContentView.swift in Sources */,
-				80C5C714265DD735008E91A9 /* FastlaneAPPApp.swift in Sources */,
+				803219BE2669EBC3007CEB6A /* ContentView.swift in Sources */,
+				803219BC2669EBC3007CEB6A /* SwiftUINavigationViewApp.swift in Sources */,
+				803219CB2669F753007CEB6A /* NavigationView1.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		80C5C71D265DD736008E91A9 /* Debug */ = {
+		803219C52669EBC4007CEB6A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -207,7 +211,7 @@
 			};
 			name = Debug;
 		};
-		80C5C71E265DD736008E91A9 /* Release */ = {
+		803219C62669EBC4007CEB6A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -262,49 +266,45 @@
 			};
 			name = Release;
 		};
-		80C5C720265DD736008E91A9 /* Debug */ = {
+		803219C82669EBC4007CEB6A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_ASSET_PATHS = "\"FastlaneAPP/Preview Content\"";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"SwiftUINavigationView/Preview Content\"";
 				DEVELOPMENT_TEAM = 69U32QXGLT;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = FastlaneAPP/Info.plist;
+				INFOPLIST_FILE = SwiftUINavigationView/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "Swift-Beginners.FastlaneAPP";
+				PRODUCT_BUNDLE_IDENTIFIER = "Swift-Beginners.SwiftUINavigationView";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = FastlaneAPP_iOS_Development;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		80C5C721265DD736008E91A9 /* Release */ = {
+		803219C92669EBC4007CEB6A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_ASSET_PATHS = "\"FastlaneAPP/Preview Content\"";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"SwiftUINavigationView/Preview Content\"";
 				DEVELOPMENT_TEAM = 69U32QXGLT;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = FastlaneAPP/Info.plist;
+				INFOPLIST_FILE = SwiftUINavigationView/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "Swift-Beginners.FastlaneAPP";
+				PRODUCT_BUNDLE_IDENTIFIER = "Swift-Beginners.SwiftUINavigationView";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = FastlaneAPP_iOS_Development;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -313,25 +313,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		80C5C70B265DD735008E91A9 /* Build configuration list for PBXProject "FastlaneAPP" */ = {
+		803219B32669EBC3007CEB6A /* Build configuration list for PBXProject "SwiftUINavigationView" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				80C5C71D265DD736008E91A9 /* Debug */,
-				80C5C71E265DD736008E91A9 /* Release */,
+				803219C52669EBC4007CEB6A /* Debug */,
+				803219C62669EBC4007CEB6A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		80C5C71F265DD736008E91A9 /* Build configuration list for PBXNativeTarget "FastlaneAPP" */ = {
+		803219C72669EBC4007CEB6A /* Build configuration list for PBXNativeTarget "SwiftUINavigationView" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				80C5C720265DD736008E91A9 /* Debug */,
-				80C5C721265DD736008E91A9 /* Release */,
+				803219C82669EBC4007CEB6A /* Debug */,
+				803219C92669EBC4007CEB6A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 80C5C708265DD735008E91A9 /* Project object */;
+	rootObject = 803219B02669EBC3007CEB6A /* Project object */;
 }

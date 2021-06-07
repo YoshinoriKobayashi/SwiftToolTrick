@@ -7,19 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		807EA4ED266D9A21008DD6C4 /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807EA4EC266D9A21008DD6C4 /* SafariView.swift */; };
 		80A7BF62266B5564005F4D8A /* MyOkashiCustomApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A7BF61266B5564005F4D8A /* MyOkashiCustomApp.swift */; };
 		80A7BF64266B5564005F4D8A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A7BF63266B5564005F4D8A /* ContentView.swift */; };
 		80A7BF66266B5565005F4D8A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80A7BF65266B5565005F4D8A /* Assets.xcassets */; };
 		80A7BF69266B5565005F4D8A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80A7BF68266B5565005F4D8A /* Preview Assets.xcassets */; };
+		80A7BF71266B5717005F4D8A /* OkashiData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A7BF70266B5717005F4D8A /* OkashiData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		807EA4EC266D9A21008DD6C4 /* SafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
 		80A7BF5E266B5564005F4D8A /* MyOkashiCustom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyOkashiCustom.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		80A7BF61266B5564005F4D8A /* MyOkashiCustomApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyOkashiCustomApp.swift; sourceTree = "<group>"; };
 		80A7BF63266B5564005F4D8A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		80A7BF65266B5565005F4D8A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		80A7BF68266B5565005F4D8A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		80A7BF6A266B5565005F4D8A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		80A7BF70266B5717005F4D8A /* OkashiData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OkashiData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +58,8 @@
 			children = (
 				80A7BF61266B5564005F4D8A /* MyOkashiCustomApp.swift */,
 				80A7BF63266B5564005F4D8A /* ContentView.swift */,
+				807EA4EC266D9A21008DD6C4 /* SafariView.swift */,
+				80A7BF70266B5717005F4D8A /* OkashiData.swift */,
 				80A7BF65266B5565005F4D8A /* Assets.xcassets */,
 				80A7BF6A266B5565005F4D8A /* Info.plist */,
 				80A7BF67266B5565005F4D8A /* Preview Content */,
@@ -138,7 +144,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				807EA4ED266D9A21008DD6C4 /* SafariView.swift in Sources */,
 				80A7BF64266B5564005F4D8A /* ContentView.swift in Sources */,
+				80A7BF71266B5717005F4D8A /* OkashiData.swift in Sources */,
 				80A7BF62266B5564005F4D8A /* MyOkashiCustomApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

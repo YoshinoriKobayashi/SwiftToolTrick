@@ -28,7 +28,7 @@ lane :beta do
     scheme: "FastlaneAPP",
     xcargs: "-allowProvisioningUpdates",
     output_directory: 'build',
-    codesigning_identity:"iOS Developer",
+    codesigning_identity:"Apple Development",
     export_options: {
       method: "development",
       provisioningProfiles: { 

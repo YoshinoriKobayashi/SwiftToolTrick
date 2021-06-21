@@ -18,6 +18,9 @@ struct ContentView: View {
     // SafariViewの表示有無を管理する変数
     @State var showSafari = false
 
+    // xconfigの値をplist経由で取得
+    let a = Bundle.main.object(forInfoDictionaryKey: "API URL") as! String
+
     var body: some View {
         // 垂直にレイアウト（縦方向にレイアウト）
         VStack {
@@ -27,6 +30,19 @@ struct ContentView: View {
                 okashiDataList.searchOkashi(keyword: inputText)
             })
             .padding()
+            Label(a, systemImage: "cloud.rain")
+                .padding()
+            #if DEV
+            Label("Development", systemImage: "cloud.rain")
+                .padding()
+            #elseif QA
+            Label("QA", systemImage: "cloud.rain")
+                .padding()
+            #else
+            Label("Production", systemImage: "cloud.rain")
+                .padding()
+            #endif
+
             // リスト表示する
             List(okashiDataList.okashiList) { okashi in
                 // １つ１つ要素が取り出される

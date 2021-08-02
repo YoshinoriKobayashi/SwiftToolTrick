@@ -2,7 +2,7 @@
 //  SwiftUINavigationViewApp.swift
 //  SwiftUINavigationView
 //
-//  Created by Swift-Beginners on 2021/06/04.
+//  Created by Swift-Beginners on 2021/07/24.
 //
 
 import SwiftUI

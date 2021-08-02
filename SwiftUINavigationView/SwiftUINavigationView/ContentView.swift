@@ -2,23 +2,15 @@
 //  ContentView.swift
 //  SwiftUINavigationView
 //
-//  Created by Swift-Beginners on 2021/06/04.
+//  Created by Swift-Beginners on 2021/07/24.
 //
 
 import SwiftUI
 
 struct ContentView: View {
-    @State private var showNavigationView1: Bool = false
-
     var body: some View {
-        VStack {
-            Button(action:{showNavigationView1.toggle()}) {
-                Text("NavigationView1")
-            }
-            .sheet(isPresented: $showNavigationView1, content: {
-                NavigationView1()
-            })
-        }
+        NavigationViewToolBar()
+//        NavigationViewNormal()
     }
 }
 

@@ -11,7 +11,10 @@ import CoreData
 struct ContentView: View {
     var quakesProvider: QuakesProvider = .shared
 
+    // UserDefaultsの値を反映し、そのユーザーデフォルトの値が
+    // 変更されたときにビューを無効にするプロパティのラッパータイプ。
     @AppStorage("lastUpdated")
+    // 遠い未来の日付を表す日付オブジェクトです。
     private var lastUpdated = Date.distantFuture.timeIntervalSince1970
 
     @FetchRequest(sortDescriptors: [SortDescriptor(\.time, order: .reverse)])

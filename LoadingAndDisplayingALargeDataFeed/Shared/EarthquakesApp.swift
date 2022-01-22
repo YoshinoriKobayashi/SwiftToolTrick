@@ -12,6 +12,7 @@ struct EarthquakesApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                // 環境変数：managedObjectContextに、QuakesProvider.shared.container.viewContextを設定
                 .environment(\.managedObjectContext, QuakesProvider.shared.container.viewContext)
         }
     }

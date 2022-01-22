@@ -12,7 +12,7 @@ class QuakesProvider {
 
     // MARK: USGS Data
 
-    /// Geological data provided by the U.S. Geological Survey (USGS). See ACKNOWLEDGMENTS.txt for additional details.
+    /// 地質データは米国地質調査所（USGS）より提供されています。詳細はACKNOWLEDGMENTS.txtをご覧ください。
     let url = URL(string: "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_month.geojson")!
 
     // MARK: Logging
@@ -21,10 +21,10 @@ class QuakesProvider {
 
     // MARK: Core Data
 
-    /// A shared quakes provider for use within the main app bundle.
+    /// メインのアプリバンドル内で使用する共有のQuakesプロバイダです。
     static let shared = QuakesProvider()
 
-    /// A quakes provider for use with canvas previews.
+    /// キャンバスのプレビューで使用されるQuakesプロバイダです。
     static let preview: QuakesProvider = {
         let provider = QuakesProvider(inMemory: true)
         Quake.makePreviews(count: 10)
@@ -37,7 +37,7 @@ class QuakesProvider {
     private init(inMemory: Bool = false) {
         self.inMemory = inMemory
 
-        // Observe Core Data remote change notifications on the queue where the changes were made.
+        // コアデータのリモート変更通知を、変更が行われたキューで観察します。
         notificationToken = NotificationCenter.default.addObserver(forName: .NSPersistentStoreRemoteChange, object: nil, queue: nil) { note in
             self.logger.debug("Received a persistent store remote change notification.")
             Task {

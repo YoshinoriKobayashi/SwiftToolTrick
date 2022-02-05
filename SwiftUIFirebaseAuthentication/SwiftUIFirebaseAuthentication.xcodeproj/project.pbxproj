@@ -7,27 +7,32 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		FEDC668E279CBCBA0035925B /* SwiftUICoreDataMVVMApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEDC668D279CBCBA0035925B /* SwiftUICoreDataMVVMApp.swift */; };
-		FEDC6690279CBCBA0035925B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEDC668F279CBCBA0035925B /* ContentView.swift */; };
-		FEDC6692279CBCBB0035925B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FEDC6691279CBCBB0035925B /* Assets.xcassets */; };
-		FEDC6695279CBCBB0035925B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FEDC6694279CBCBB0035925B /* Preview Assets.xcassets */; };
-		FEDC669E279CBF220035925B /* BudgetAppModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FEDC669C279CBF220035925B /* BudgetAppModel.xcdatamodeld */; };
-		FEDC66A1279CC5250035925B /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEDC66A0279CC5250035925B /* CoreDataManager.swift */; };
+		FE2A404F27ADFBF000E92B24 /* SwiftUIFirebaseAuthenticationApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2A404E27ADFBF000E92B24 /* SwiftUIFirebaseAuthenticationApp.swift */; };
+		FE2A405127ADFBF000E92B24 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2A405027ADFBF000E92B24 /* ContentView.swift */; };
+		FE2A405327ADFBF200E92B24 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE2A405227ADFBF200E92B24 /* Assets.xcassets */; };
+		FE2A405627ADFBF200E92B24 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE2A405527ADFBF200E92B24 /* Preview Assets.xcassets */; };
+		FE2A405D27ADFC0D00E92B24 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FE2A405C27ADFC0D00E92B24 /* GoogleService-Info.plist */; };
+		FE2A406327ADFF8900E92B24 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = FE2A406227ADFF8900E92B24 /* .swiftlint.yml */; };
+		FE2A406927AE2E7B00E92B24 /* FirebaseAuthStateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2A406827AE2E7B00E92B24 /* FirebaseAuthStateManager.swift */; };
+		FE2A406B27AE304A00E92B24 /* FirebaseUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2A406A27AE304A00E92B24 /* FirebaseUIView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		FEDC668A279CBCBA0035925B /* SwiftUICoreDataMVVM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUICoreDataMVVM.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		FEDC668D279CBCBA0035925B /* SwiftUICoreDataMVVMApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUICoreDataMVVMApp.swift; sourceTree = "<group>"; };
-		FEDC668F279CBCBA0035925B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		FEDC6691279CBCBB0035925B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		FEDC6694279CBCBB0035925B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		FEDC669B279CBCEB0035925B /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		FEDC669D279CBF220035925B /* BudgetAppModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BudgetAppModel.xcdatamodel; sourceTree = "<group>"; };
-		FEDC66A0279CC5250035925B /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		FE2A404B27ADFBF000E92B24 /* SwiftUIFirebaseAuthentication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUIFirebaseAuthentication.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FE2A404E27ADFBF000E92B24 /* SwiftUIFirebaseAuthenticationApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIFirebaseAuthenticationApp.swift; sourceTree = "<group>"; };
+		FE2A405027ADFBF000E92B24 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		FE2A405227ADFBF200E92B24 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FE2A405527ADFBF200E92B24 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		FE2A405C27ADFC0D00E92B24 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		FE2A406027ADFC3E00E92B24 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		FE2A406227ADFF8900E92B24 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		FE2A406727AE205000E92B24 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		FE2A406827AE2E7B00E92B24 /* FirebaseAuthStateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthStateManager.swift; sourceTree = "<group>"; };
+		FE2A406A27AE304A00E92B24 /* FirebaseUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseUIView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		FEDC6687279CBCBA0035925B /* Frameworks */ = {
+		FE2A404827ADFBF000E92B24 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -37,88 +42,102 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		FEDC6681279CBCBA0035925B = {
+		FE2A404227ADFBF000E92B24 = {
 			isa = PBXGroup;
 			children = (
-				FEDC669B279CBCEB0035925B /* README.md */,
-				FEDC668C279CBCBA0035925B /* SwiftUICoreDataMVVM */,
-				FEDC668B279CBCBA0035925B /* Products */,
+				FE2A404D27ADFBF000E92B24 /* SwiftUIFirebaseAuthentication */,
+				FE2A404C27ADFBF000E92B24 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		FEDC668B279CBCBA0035925B /* Products */ = {
+		FE2A404C27ADFBF000E92B24 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				FEDC668A279CBCBA0035925B /* SwiftUICoreDataMVVM.app */,
+				FE2A404B27ADFBF000E92B24 /* SwiftUIFirebaseAuthentication.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		FEDC668C279CBCBA0035925B /* SwiftUICoreDataMVVM */ = {
+		FE2A404D27ADFBF000E92B24 /* SwiftUIFirebaseAuthentication */ = {
 			isa = PBXGroup;
 			children = (
-				FEDC669F279CC4D10035925B /* Managers */,
-				FEDC668D279CBCBA0035925B /* SwiftUICoreDataMVVMApp.swift */,
-				FEDC668F279CBCBA0035925B /* ContentView.swift */,
-				FEDC6691279CBCBB0035925B /* Assets.xcassets */,
-				FEDC6693279CBCBB0035925B /* Preview Content */,
-				FEDC669C279CBF220035925B /* BudgetAppModel.xcdatamodeld */,
+				FE2A406027ADFC3E00E92B24 /* Info.plist */,
+				FE2A405C27ADFC0D00E92B24 /* GoogleService-Info.plist */,
+				FE2A406227ADFF8900E92B24 /* .swiftlint.yml */,
+				FE2A404E27ADFBF000E92B24 /* SwiftUIFirebaseAuthenticationApp.swift */,
+				FE2A405F27ADFC2000E92B24 /* ViewModel */,
+				FE2A405E27ADFC1300E92B24 /* View */,
+				FE2A405227ADFBF200E92B24 /* Assets.xcassets */,
+				FE2A405427ADFBF200E92B24 /* Preview Content */,
+				FE2A406727AE205000E92B24 /* README.md */,
 			);
-			path = SwiftUICoreDataMVVM;
+			path = SwiftUIFirebaseAuthentication;
 			sourceTree = "<group>";
 		};
-		FEDC6693279CBCBB0035925B /* Preview Content */ = {
+		FE2A405427ADFBF200E92B24 /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
-				FEDC6694279CBCBB0035925B /* Preview Assets.xcassets */,
+				FE2A405527ADFBF200E92B24 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		FEDC669F279CC4D10035925B /* Managers */ = {
+		FE2A405E27ADFC1300E92B24 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				FEDC66A0279CC5250035925B /* CoreDataManager.swift */,
+				FE2A405027ADFBF000E92B24 /* ContentView.swift */,
+				FE2A406A27AE304A00E92B24 /* FirebaseUIView.swift */,
 			);
-			path = Managers;
+			path = View;
+			sourceTree = "<group>";
+		};
+		FE2A405F27ADFC2000E92B24 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				FE2A406827AE2E7B00E92B24 /* FirebaseAuthStateManager.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		FEDC6689279CBCBA0035925B /* SwiftUICoreDataMVVM */ = {
+		FE2A404A27ADFBF000E92B24 /* SwiftUIFirebaseAuthentication */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FEDC6698279CBCBB0035925B /* Build configuration list for PBXNativeTarget "SwiftUICoreDataMVVM" */;
+			buildConfigurationList = FE2A405927ADFBF200E92B24 /* Build configuration list for PBXNativeTarget "SwiftUIFirebaseAuthentication" */;
 			buildPhases = (
-				FEDC6686279CBCBA0035925B /* Sources */,
-				FEDC6687279CBCBA0035925B /* Frameworks */,
-				FEDC6688279CBCBA0035925B /* Resources */,
+				FE2A404727ADFBF000E92B24 /* Sources */,
+				FE2A404827ADFBF000E92B24 /* Frameworks */,
+				FE2A404927ADFBF000E92B24 /* Resources */,
+				FE2A406127ADFE9E00E92B24 /* Run Script */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = SwiftUICoreDataMVVM;
-			productName = SwiftUICoreDataMVVM;
-			productReference = FEDC668A279CBCBA0035925B /* SwiftUICoreDataMVVM.app */;
+			name = SwiftUIFirebaseAuthentication;
+			packageProductDependencies = (
+			);
+			productName = SwiftUIFirebaseAuthentication;
+			productReference = FE2A404B27ADFBF000E92B24 /* SwiftUIFirebaseAuthentication.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		FEDC6682279CBCBA0035925B /* Project object */ = {
+		FE2A404327ADFBF000E92B24 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1320;
 				LastUpgradeCheck = 1320;
 				TargetAttributes = {
-					FEDC6689279CBCBA0035925B = {
+					FE2A404A27ADFBF000E92B24 = {
 						CreatedOnToolsVersion = 13.2.1;
 					};
 				};
 			};
-			buildConfigurationList = FEDC6685279CBCBA0035925B /* Build configuration list for PBXProject "SwiftUICoreDataMVVM" */;
+			buildConfigurationList = FE2A404627ADFBF000E92B24 /* Build configuration list for PBXProject "SwiftUIFirebaseAuthentication" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -126,44 +145,69 @@
 				en,
 				Base,
 			);
-			mainGroup = FEDC6681279CBCBA0035925B;
-			productRefGroup = FEDC668B279CBCBA0035925B /* Products */;
+			mainGroup = FE2A404227ADFBF000E92B24;
+			packageReferences = (
+			);
+			productRefGroup = FE2A404C27ADFBF000E92B24 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				FEDC6689279CBCBA0035925B /* SwiftUICoreDataMVVM */,
+				FE2A404A27ADFBF000E92B24 /* SwiftUIFirebaseAuthentication */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		FEDC6688279CBCBA0035925B /* Resources */ = {
+		FE2A404927ADFBF000E92B24 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FEDC6695279CBCBB0035925B /* Preview Assets.xcassets in Resources */,
-				FEDC6692279CBCBB0035925B /* Assets.xcassets in Resources */,
+				FE2A406327ADFF8900E92B24 /* .swiftlint.yml in Resources */,
+				FE2A405627ADFBF200E92B24 /* Preview Assets.xcassets in Resources */,
+				FE2A405327ADFBF200E92B24 /* Assets.xcassets in Resources */,
+				FE2A405D27ADFC0D00E92B24 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		FE2A406127ADFE9E00E92B24 /* Run Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nexport PATH=\"$PATH:/opt/homebrew/bin\"\n\nif which swiftlint; then\n    swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
-		FEDC6686279CBCBA0035925B /* Sources */ = {
+		FE2A404727ADFBF000E92B24 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FEDC6690279CBCBA0035925B /* ContentView.swift in Sources */,
-				FEDC669E279CBF220035925B /* BudgetAppModel.xcdatamodeld in Sources */,
-				FEDC66A1279CC5250035925B /* CoreDataManager.swift in Sources */,
-				FEDC668E279CBCBA0035925B /* SwiftUICoreDataMVVMApp.swift in Sources */,
+				FE2A405127ADFBF000E92B24 /* ContentView.swift in Sources */,
+				FE2A406B27AE304A00E92B24 /* FirebaseUIView.swift in Sources */,
+				FE2A404F27ADFBF000E92B24 /* SwiftUIFirebaseAuthenticationApp.swift in Sources */,
+				FE2A406927AE2E7B00E92B24 /* FirebaseAuthStateManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		FEDC6696279CBCBB0035925B /* Debug */ = {
+		FE2A405727ADFBF200E92B24 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -224,7 +268,7 @@
 			};
 			name = Debug;
 		};
-		FEDC6697279CBCBB0035925B /* Release */ = {
+		FE2A405827ADFBF200E92B24 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -279,17 +323,18 @@
 			};
 			name = Release;
 		};
-		FEDC6699279CBCBB0035925B /* Debug */ = {
+		FE2A405A27ADFBF200E92B24 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"SwiftUICoreDataMVVM/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"SwiftUIFirebaseAuthentication/Preview Content\"";
 				DEVELOPMENT_TEAM = 69U32QXGLT;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SwiftUIFirebaseAuthentication/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -300,7 +345,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "Swift-Beginners.SwiftUICoreDataMVVM";
+				PRODUCT_BUNDLE_IDENTIFIER = "Swift-Beginners.SwiftUIFirebaseAuthentication";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -308,17 +353,18 @@
 			};
 			name = Debug;
 		};
-		FEDC669A279CBCBB0035925B /* Release */ = {
+		FE2A405B27ADFBF200E92B24 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"SwiftUICoreDataMVVM/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"SwiftUIFirebaseAuthentication/Preview Content\"";
 				DEVELOPMENT_TEAM = 69U32QXGLT;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SwiftUIFirebaseAuthentication/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -329,7 +375,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "Swift-Beginners.SwiftUICoreDataMVVM";
+				PRODUCT_BUNDLE_IDENTIFIER = "Swift-Beginners.SwiftUIFirebaseAuthentication";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -340,38 +386,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		FEDC6685279CBCBA0035925B /* Build configuration list for PBXProject "SwiftUICoreDataMVVM" */ = {
+		FE2A404627ADFBF000E92B24 /* Build configuration list for PBXProject "SwiftUIFirebaseAuthentication" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				FEDC6696279CBCBB0035925B /* Debug */,
-				FEDC6697279CBCBB0035925B /* Release */,
+				FE2A405727ADFBF200E92B24 /* Debug */,
+				FE2A405827ADFBF200E92B24 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		FEDC6698279CBCBB0035925B /* Build configuration list for PBXNativeTarget "SwiftUICoreDataMVVM" */ = {
+		FE2A405927ADFBF200E92B24 /* Build configuration list for PBXNativeTarget "SwiftUIFirebaseAuthentication" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				FEDC6699279CBCBB0035925B /* Debug */,
-				FEDC669A279CBCBB0035925B /* Release */,
+				FE2A405A27ADFBF200E92B24 /* Debug */,
+				FE2A405B27ADFBF200E92B24 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		FEDC669C279CBF220035925B /* BudgetAppModel.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				FEDC669D279CBF220035925B /* BudgetAppModel.xcdatamodel */,
-			);
-			currentVersion = FEDC669D279CBF220035925B /* BudgetAppModel.xcdatamodel */;
-			path = BudgetAppModel.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
-	rootObject = FEDC6682279CBCBA0035925B /* Project object */;
+	rootObject = FE2A404327ADFBF000E92B24 /* Project object */;
 }

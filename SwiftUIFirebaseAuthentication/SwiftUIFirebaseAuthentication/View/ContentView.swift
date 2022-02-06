@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
+    // 
     @ObservedObject private var authStateManager = FirebaseAuthStateManager()
     @State var isShowSheet = false
     

@@ -8,8 +8,14 @@
 import FirebaseAuth
 //import Combine
 
+// observable（観測可能）
+// モデルのデータ変更をSwiftUIから見えるようにするには、モデルクラスにObservableObjectプロトコルを採用
 class FirebaseAuthStateManager: ObservableObject {
+    // Published属性を付加して公開する。
     @Published var signInState: Bool = false
+    
+    // SwiftUIに監視させない、ローカルのみ
+    // 双方が変更可能で、ユーザーインターフェースにとって重要なプロパティのみを公開します。
     private var handle: AuthStateDidChangeListenerHandle!
     
     init() {

@@ -8,8 +8,8 @@
 import UIKit
 import RxSwift
 
-class ViewController: UIViewController {
-
+class StopWatchViewController: UIViewController {
+    
     let timerLabel: UILabel =  {
         let label = UILabel()
         label.backgroundColor = .lightGray
@@ -35,7 +35,7 @@ class ViewController: UIViewController {
         return button
     }()
     
-    private var viewModel = StopWatchViewModelType
+    private var viewModel: StopWatchViewModelType
     private var disposeBag = DisposeBag()
     
     init(viewModel: StopWatchViewModelType) {
@@ -52,7 +52,69 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         setupSubView()
         bind()
-        viewModel.inputs.ioPaueTimer.accept(false)
+        viewModel.inputs.isPauseTimer.accept(false)
     }
 }
 
+extension StopWatchViewController {
+    func bind() {
+        startStopButton.rx.tap.asSignal()
+            .withLatestFrom(viewModel.outputs.isTimerWorked)
+            .emit(onNext: { [weak self] isTimerStop in 
+                self?.viewModel.inputs.isPauseTimer.accept(!isTimerStop)
+            })
+            .disposed(by: disposeBag)
+        
+        resetButton.rx.tap.asSignal()
+            .emit(to:viewModel.inputs.isResetButtonTaped)
+            .disposed(by: disposeBag)
+        
+        viewModel.outputs.isTimerWorked
+            .drive(onNext: { [weak self] isWorked in 
+                if isWorked {
+                    self?.startStopButton.backgroundColor = UIColor(red: 255/255, green: 110/255, blue: 134/255, alpha: 1)
+                    self?.startStopButton.setTitle("Stop", for: UIControl.State.normal)
+                } else {
+                    self?.startStopButton.backgroundColor = UIColor(red: 173/255, green: 247/255, blue: 181/255, alpha: 1)
+                    self?.startStopButton.setTitle("Start", for: UIControl.State.normal)
+                }
+            })
+            .disposed(by: disposeBag)
+        
+        viewModel.outputs.timerText
+            .drive(timerLabel.rx.text)
+            .disposed(by: disposeBag)
+        
+        viewModel.outputs.isResetButtonHidden
+            .drive(resetButton.rx.isHidden)
+            .disposed(by: disposeBag)
+    }
+    
+    func setupSubView() {
+        view?.backgroundColor = .white
+        let view10Width = self.view.frame.size.width / 10
+        let view20Height = self.view.frame.size.height / 20
+        
+        view.addSubview(timerLabel)
+        timerLabel.translatesAutoresizingMaskIntoConstraints = false
+        timerLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: view20Height * 4).isActive = true
+        timerLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        timerLabel.widthAnchor.constraint(equalToConstant: view10Width * 7).isActive = true
+        timerLabel.heightAnchor.constraint(equalToConstant: view20Height * 4).isActive = true
+        
+        view.addSubview(startStopButton)
+        startStopButton.translatesAutoresizingMaskIntoConstraints = false
+        startStopButton.topAnchor.constraint(equalTo: timerLabel.bottomAnchor,constant: view20Height * 3).isActive = true
+        startStopButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: view10Width * 2).isActive = true
+        startStopButton.widthAnchor.constraint(equalToConstant: view10Width * 2.5).isActive = true
+        startStopButton.heightAnchor.constraint(equalToConstant: view20Height * 3).isActive = true
+        
+        view?.addSubview(resetButton)
+        resetButton.translatesAutoresizingMaskIntoConstraints = false
+        resetButton.topAnchor.constraint(equalTo: timerLabel.bottomAnchor,constant: view20Height * 3).isActive = true
+        resetButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -(view10Width * 2)).isActive = true
+        resetButton.widthAnchor.constraint(equalToConstant: view10Width * 2.5).isActive = true
+        resetButton.heightAnchor.constraint(equalToConstant: view20Height * 3).isActive = true
+        
+    }
+}

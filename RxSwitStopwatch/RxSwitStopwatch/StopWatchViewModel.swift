@@ -17,17 +17,18 @@ protocol StopWatchViewModelInputs: AnyObject {
 protocol StopWatchViewModelOutputs: AnyObject {
     var isTimerWorked: Driver<Bool> { get }
     var timerText: Driver<String> { get }
-    var isResetButtonHidden: Driver<bool> { get }
+    var isResetButtonHidden: Driver<Bool> { get }
 }
 
 protocol StopWatchViewModelType: AnyObject {
-    var iputs: StopWatchViewModelInputs { get }
+    var inputs: StopWatchViewModelInputs { get }
     var outputs: StopWatchViewModelOutputs { get }
 }
 
-final class StopWatchViewModel: StopWatchViewModelType. StopWatchViewModelInputs,StopWatchViewModelOutputs {
+final class StopWatchViewModel: StopWatchViewModelType, StopWatchViewModelInputs, StopWatchViewModelOutputs {
+    
     var inputs: StopWatchViewModelInputs { return self }
-    var putputs: StopWatchViewModelOutputs{ return self }
+    var outputs: StopWatchViewModelOutputs{ return self }
     
     // MARK: - Input
     let isPauseTimer = PublishRelay<Bool>()
@@ -55,7 +56,8 @@ final class StopWatchViewModel: StopWatchViewModelType. StopWatchViewModelInputs
         isTimerWorked.asObservable()
             .flatMapLatest { [weak self] isWorked -> Observable<Int> in 
                 if isWorked {
-                    return Observable<Int>.interval(0.1, scheduler: MainScheduler.instance)
+                    // RxTimeInterval：RxSwiftのコンテキストで時間間隔を表す型。
+                    return Observable<Int>.interval(RxTimeInterval.milliseconds(100), scheduler: MainScheduler.instance)
                         .withLatestFrom(Observable<Int>.just(self?.totalTimerDuration.value ?? 0)) { ($0 + $1)}
                 } else {
                     return Observable<Int>.just(self?.totalTimerDuration.value ?? 0)
@@ -65,7 +67,7 @@ final class StopWatchViewModel: StopWatchViewModelType. StopWatchViewModelInputs
             .disposed(by: disposeBag)
         
         isResetButtonTaped.map { _ in 0 }
-            .bind(to: totalTimerDuration)
-            .disposed(by: disposeBag)
+        .bind(to: totalTimerDuration)
+        .disposed(by: disposeBag)
     }
 }

@@ -11,9 +11,7 @@
 		FA2F944427BE4CDC00A9EB78 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2F944327BE4CDC00A9EB78 /* AppDelegate.swift */; };
 		FA2F944627BE4CDC00A9EB78 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2F944527BE4CDC00A9EB78 /* SceneDelegate.swift */; };
 		FA2F944827BE4CDC00A9EB78 /* StopWatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2F944727BE4CDC00A9EB78 /* StopWatchViewController.swift */; };
-		FA2F944B27BE4CDC00A9EB78 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA2F944927BE4CDC00A9EB78 /* Main.storyboard */; };
 		FA2F944D27BE4CDF00A9EB78 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA2F944C27BE4CDF00A9EB78 /* Assets.xcassets */; };
-		FA2F945027BE4CDF00A9EB78 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA2F944E27BE4CDF00A9EB78 /* LaunchScreen.storyboard */; };
 		FAEFCF1127BE532A005938C6 /* StopWatchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEFCF1027BE532A005938C6 /* StopWatchViewModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -25,9 +23,7 @@
 		FA2F944327BE4CDC00A9EB78 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA2F944527BE4CDC00A9EB78 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		FA2F944727BE4CDC00A9EB78 /* StopWatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopWatchViewController.swift; sourceTree = "<group>"; };
-		FA2F944A27BE4CDC00A9EB78 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FA2F944C27BE4CDF00A9EB78 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		FA2F944F27BE4CDF00A9EB78 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FA2F945127BE4CDF00A9EB78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA2F945727BE4CFB00A9EB78 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		FAEFCF1027BE532A005938C6 /* StopWatchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopWatchViewModel.swift; sourceTree = "<group>"; };
@@ -88,9 +84,7 @@
 				FA2F944527BE4CDC00A9EB78 /* SceneDelegate.swift */,
 				FA2F944727BE4CDC00A9EB78 /* StopWatchViewController.swift */,
 				FAEFCF1027BE532A005938C6 /* StopWatchViewModel.swift */,
-				FA2F944927BE4CDC00A9EB78 /* Main.storyboard */,
 				FA2F944C27BE4CDF00A9EB78 /* Assets.xcassets */,
-				FA2F944E27BE4CDF00A9EB78 /* LaunchScreen.storyboard */,
 				FA2F945127BE4CDF00A9EB78 /* Info.plist */,
 			);
 			path = RxSwitStopwatch;
@@ -156,9 +150,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA2F945027BE4CDF00A9EB78 /* LaunchScreen.storyboard in Resources */,
 				FA2F944D27BE4CDF00A9EB78 /* Assets.xcassets in Resources */,
-				FA2F944B27BE4CDC00A9EB78 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -219,25 +211,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		FA2F944927BE4CDC00A9EB78 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FA2F944A27BE4CDC00A9EB78 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		FA2F944E27BE4CDF00A9EB78 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FA2F944F27BE4CDF00A9EB78 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		FA2F945227BE4CDF00A9EB78 /* Debug */ = {

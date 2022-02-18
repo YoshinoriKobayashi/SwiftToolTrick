@@ -11,7 +11,4 @@ target 'RxSwitStopwatch' do
   pod 'RxCocoa'
   pod 'RxSwift'
   pod 'SnapKit'
-  # Utility
-  pod 'SwiftLint'
-
 end

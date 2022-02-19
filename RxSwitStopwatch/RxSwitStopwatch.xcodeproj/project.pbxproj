@@ -13,6 +13,7 @@
 		FA2F944827BE4CDC00A9EB78 /* StopWatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2F944727BE4CDC00A9EB78 /* StopWatchViewController.swift */; };
 		FA2F944D27BE4CDF00A9EB78 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA2F944C27BE4CDF00A9EB78 /* Assets.xcassets */; };
 		FAEFCF1127BE532A005938C6 /* StopWatchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEFCF1027BE532A005938C6 /* StopWatchViewModel.swift */; };
+		FEF5784E27C072CE00EF35BA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEF5784D27C072CE00EF35BA /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		FA2F945127BE4CDF00A9EB78 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA2F945727BE4CFB00A9EB78 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		FAEFCF1027BE532A005938C6 /* StopWatchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopWatchViewModel.swift; sourceTree = "<group>"; };
+		FEF5784D27C072CE00EF35BA /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 				FAEFCF1027BE532A005938C6 /* StopWatchViewModel.swift */,
 				FA2F944C27BE4CDF00A9EB78 /* Assets.xcassets */,
 				FA2F945127BE4CDF00A9EB78 /* Info.plist */,
+				FEF5784D27C072CE00EF35BA /* Main.storyboard */,
 			);
 			path = RxSwitStopwatch;
 			sourceTree = "<group>";
@@ -151,6 +154,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA2F944D27BE4CDF00A9EB78 /* Assets.xcassets in Resources */,
+				FEF5784E27C072CE00EF35BA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -342,7 +346,6 @@
 				INFOPLIST_FILE = RxSwitStopwatch/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -371,7 +374,6 @@
 				INFOPLIST_FILE = RxSwitStopwatch/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

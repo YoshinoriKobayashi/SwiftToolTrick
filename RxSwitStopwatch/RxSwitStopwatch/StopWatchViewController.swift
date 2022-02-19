@@ -6,11 +6,12 @@
 //
 
 import UIKit
+import SnapKit
 import RxSwift
+import RxCocoa
 
 class StopWatchViewController: UIViewController {
-    
-    let timerLabel: UILabel =  {
+    let timerLabel: UILabel = {
         let label = UILabel()
         label.backgroundColor = .lightGray
         label.font = UIFont.italicSystemFont(ofSize: 40)
@@ -20,7 +21,7 @@ class StopWatchViewController: UIViewController {
     
     let startStopButton: UIButton = {
         let button = UIButton()
-        button.setTitleColor(.black,for: .normal)
+        button.setTitleColor(.black, for: .normal)
         button.layer.cornerRadius = 50
         return button
     }()
@@ -35,42 +36,32 @@ class StopWatchViewController: UIViewController {
         return button
     }()
     
-    private var viewModel: StopWatchViewModelType
-    private var disposeBag = DisposeBag()
-    
-    init(viewModel: StopWatchViewModelType) {
-        self.viewModel = viewModel
-        super.init(nibName: nil, bundle: nil)
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+    private var viewModel: StopWatchViewModelType = StopWatchViewModel()
+    private let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         setupSubView()
         bind()
         viewModel.inputs.isPauseTimer.accept(false)
     }
 }
-
+                   
 extension StopWatchViewController {
     func bind() {
         startStopButton.rx.tap.asSignal()
             .withLatestFrom(viewModel.outputs.isTimerWorked)
-            .emit(onNext: { [weak self] isTimerStop in 
+            .emit(onNext: { [weak self] isTimerStop in
                 self?.viewModel.inputs.isPauseTimer.accept(!isTimerStop)
             })
             .disposed(by: disposeBag)
         
         resetButton.rx.tap.asSignal()
-            .emit(to:viewModel.inputs.isResetButtonTaped)
+            .emit(to: viewModel.inputs.isResetButtonTaped)
             .disposed(by: disposeBag)
         
         viewModel.outputs.isTimerWorked
-            .drive(onNext: { [weak self] isWorked in 
+            .drive(onNext: { [weak self] isWorked in
                 if isWorked {
                     self?.startStopButton.backgroundColor = UIColor(red: 255/255, green: 110/255, blue: 134/255, alpha: 1)
                     self?.startStopButton.setTitle("Stop", for: UIControl.State.normal)
@@ -91,7 +82,7 @@ extension StopWatchViewController {
     }
     
     func setupSubView() {
-        view?.backgroundColor = .white
+        view.backgroundColor = .white
         let view10Width = self.view.frame.size.width / 10
         let view20Height = self.view.frame.size.height / 20
         
@@ -109,12 +100,12 @@ extension StopWatchViewController {
         startStopButton.widthAnchor.constraint(equalToConstant: view10Width * 2.5).isActive = true
         startStopButton.heightAnchor.constraint(equalToConstant: view20Height * 3).isActive = true
         
-        view?.addSubview(resetButton)
+        view.addSubview(resetButton)
         resetButton.translatesAutoresizingMaskIntoConstraints = false
         resetButton.topAnchor.constraint(equalTo: timerLabel.bottomAnchor,constant: view20Height * 3).isActive = true
         resetButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -(view10Width * 2)).isActive = true
         resetButton.widthAnchor.constraint(equalToConstant: view10Width * 2.5).isActive = true
         resetButton.heightAnchor.constraint(equalToConstant: view20Height * 3).isActive = true
-        
     }
 }
+                   

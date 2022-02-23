@@ -48,6 +48,7 @@ class StopWatchViewController: UIViewController {
 }
                    
 extension StopWatchViewController {
+    // ここで画面パーツのアクションをまとめて定義
     func bind() {
         startStopButton.rx.tap.asSignal()
             .withLatestFrom(viewModel.outputs.isTimerWorked)

@@ -47,6 +47,7 @@ publisher.subscribe(relay)
 
 /*:
 ## Example 3
+Using a `CurrentValueSubject` to hold and relay the latest value to new subscribers
  最新の値を保持し、新しい購読者にリレーするために `CurrentValueSubject` を使用する。
 */
 

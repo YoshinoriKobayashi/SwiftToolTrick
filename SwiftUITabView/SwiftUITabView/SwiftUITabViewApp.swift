@@ -1,14 +1,14 @@
 //
-//  TabViewStyleApp.swift
-//  TabViewStyle
+//  SwiftUITabViewApp.swift
+//  SwiftUITabView
 //
-//  Created by yoshiiikoba on 2021/11/05.
+//  Created by yoshiiikoba on 2022/02/23.
 //
 
 import SwiftUI
 
 @main
-struct TabViewStyleApp: App {
+struct SwiftUITabViewApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()

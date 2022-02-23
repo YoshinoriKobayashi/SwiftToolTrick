@@ -1,14 +1,13 @@
 //
 //  ContentView.swift
-//  TabViewStyle
+//  SwiftUITabView
 //
-//  Created by yoshiiikoba on 2021/11/05.
+//  Created by yoshiiikoba on 2022/02/23.
 //
 
 import SwiftUI
 
 struct ContentView: View {
-    
     @State private var selection = 0
     
     var body: some View {
@@ -36,12 +35,11 @@ struct ContentView: View {
             .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
         }
         .onChange(of: selection) { newValue in
-                  print("newValue = [\(newValue)]")
+            print("newValue = [\(newValue)]")
             selection = 1
         }
     }
 }
-
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {

@@ -15,5 +15,6 @@
         <page name='Future and Promises'/>
         <page name='Debugging'/>
         <page name='Custom UIKit Publishers'/>
+        <page name='tryMap'/>
     </pages>
 </playground>

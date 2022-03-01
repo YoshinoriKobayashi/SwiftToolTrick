@@ -45,6 +45,15 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
+    
+    let disposeBag = DisposeBag()
+    
+    let dataSource = RxTableViewSectionedReloadDataSource<SectionOfCustomData>(
+        configureCell: { dataSource, tableView, IndexPath, item in
+            let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: IndexPath)
+            cell.textLabel?.text = item
+        }
+    )
 
 
 }

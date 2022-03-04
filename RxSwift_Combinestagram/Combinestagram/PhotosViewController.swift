@@ -32,11 +32,12 @@
 
 import UIKit
 import Photos
+import RxSwift
 
 class PhotosViewController: UICollectionViewController {
 
   // MARK: public properties
-
+  
   // MARK: private properties
   private lazy var photos = PhotosViewController.loadPhotos()
   private lazy var imageManager = PHCachingImageManager()
@@ -46,7 +47,20 @@ class PhotosViewController: UICollectionViewController {
     return CGSize(width: cellSize.width * UIScreen.main.scale,
                   height: cellSize.height * UIScreen.main.scale)
   }()
-
+  
+  // 選択した写真を公開するためにPublishSubjectを追加したいのですが、
+  // 他のクラスがonNext(_)を呼び出してサブジェクトに値を発行させることができるため、
+  // パブリックにアクセスできないようにしたい
+  // selectdPhotosSubjectはprivateにして、ここでしか監視できない
+  // 選択した写真を出力する private PublishSubject
+  private let selectedPhotosSubject = PublishSubject<UIImage>()
+  // subject’s observable を公開する public property selectedPhotos の両方を定義
+  // selectedPhotosは、Observableなデータ型であるUIImageにしている
+  var selectedPhotos: Observable<UIImage> {
+    //selectdPhotosSubjectをオブザーブ化
+    return selectedPhotosSubject.asObservable()
+  }
+  
   static func loadPhotos() -> PHFetchResult<PHAsset> {
     let allPhotosOptions = PHFetchOptions()
     allPhotosOptions.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: true)]
@@ -85,6 +99,7 @@ class PhotosViewController: UICollectionViewController {
     return cell
   }
 
+  // 選択された画像を取得してコレクションセルを点滅させ、ユーザーにちょっとした視覚的なフィードバック
   override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
     let asset = photos.object(at: indexPath.item)
 
@@ -92,9 +107,14 @@ class PhotosViewController: UICollectionViewController {
       cell.flash()
     }
 
+    // imageManager.requestImage(...)は選択された写真を取得し、その完了クロージャで作業するための画像と情報のパラメータを与えます
     imageManager.requestImage(for: asset, targetSize: view.frame.size, contentMode: .aspectFill, options: nil, resultHandler: { [weak self] image, info in
       guard let image = image, let info = info else { return }
       
+      if let isThumbnail = info[PHImageResultIsDegradedKey as NSString] as? Bool, !isThumbnail {
+        // onNextで写真をpush
+        self?.selectedPhotosSubject.onNext(image)
+      }
     })
   }
 }

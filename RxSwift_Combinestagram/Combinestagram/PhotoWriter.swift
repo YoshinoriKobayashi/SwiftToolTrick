@@ -33,11 +33,44 @@
 import Foundation
 import UIKit
 import Photos
+import RxSwift
 
 class PhotoWriter {
   enum Errors: Error {
     case couldNotSavePhoto
   }
 
+  // 写真を保存したいコードに返すobservableを作成
+  // save(_:) は Observable<String> を返します。なぜなら、写真を保存した後、作成したアセットのユニークなローカル識別子を1つの要素として発行するからです。
+  static func save(_ images: UIImage) -> Observable<String> {
+    // Observable.create(_) は新しい Observable を作成
+    return Observable.create { observer in
+      var savedAssetId: String?
+      // performChanges(_:completionHandler:) の最初のクロージャパラメータで、提供された画像からフォトアセットを作成
+      PHPhotoLibrary.shared().performChanges({
+        // 新しい写真アセットを作成
+        let request = PHAssetChangeRequest.creationRequestForAsset(from: images)
+        // その識別子を savedAssetId に格納
+        savedAssetId = request.placeholderForCreatedAsset?.localIdentifier
+        
+      }, completionHandler: { success, error in
+        // 2番目のクロージャで、アセットIDか.errorイベントを発行
+        // 成功の応答が返ってきて、savedAssetIdに有効なアセットIDが含まれていれば
+        // 、.nextイベントと.completedイベントを発信
+        DispatchQueue.main.async {
+          if success, let id = savedAssetId {
+            // self.on(.next(element)) のショートハンド
+            observer.onNext(id)
+            observer.onCompleted()
+          } else {
+            // エラーが発生した場合は、カスタムエラー
+            observer.onError(error ?? Errors.couldNotSavePhoto)
+          }
+        }
+      })
+      // 外側のクロージャからDisposableを返す必要がある
+      return Disposables.create()
+    }
+  }
 
 }

@@ -73,9 +73,13 @@ class PhotosViewController: UICollectionViewController {
 
   }
 
+  // 非表示になった
   override func viewWillDisappear(_ animated: Bool) {
     super.viewWillDisappear(animated)
-
+    // on(.completed)` に相当する便宜的なメソッド。
+    // メソッドの中で「self.on(.completed)」を呼びだし
+    // 購読が完了したことをすべてのオブザーバーに通知
+    selectedPhotosSubject.onCompleted()
   }
 
   // MARK: UICollectionView

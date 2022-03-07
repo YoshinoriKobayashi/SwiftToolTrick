@@ -84,7 +84,24 @@ class MainViewController: UIViewController {
   }
 
   @IBAction func actionSave() {
-
+    guard let image = imagePreview.image else { return }
+    
+    // 現在のコラージュを保存しています
+    PhotoWriter.save(image)
+      // 返された Observable を Single に変換
+      // サブスクリプションが最大で 1 つの要素を取得するようにする
+      .asSingle()
+      .subscribe(
+        onSuccess: {[weak self] id in
+          self?.showMessage("Saved with id:\(id)")
+          // 書き込み操作が成功した場合、現在のコラージュをクリア
+          self?.actionClear()
+        },
+        onError: { [weak self] error in
+          self?.showMessage("Error", description: error.localizedDescription)
+        }
+      )
+      .disposed(by: bag)
   }
 
   // images リレーの初期値は空の配列で、ユーザーが + ボタンをタップするたびに、
@@ -108,7 +125,9 @@ class MainViewController: UIViewController {
           guard let images = self?.images else { return }
           // イベント`を受け取り、それをサブスクライバーに発行する。
           // selectedPhotosとは別のObserverであるimagesにイベント発行する
-          // selectedPhotosとimagesのオブザーバーは関係がなくて、このように他のオブザーバーを購読した場所で別のオブザーバーにイベント発行する
+          // selectedPhotosとimagesのオブザーバーは関係がなくて、
+          // このように他のオブザーバーを購読した場所で
+          // 別のオブザーバーにイベント発行することもできる
           images.accept(images.value + [newImage])
         },
         onDisposed: {

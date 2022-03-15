@@ -8,22 +8,43 @@
 
 import UIKit
 
-class SortMenuViewController: UITableViewController {
+// UIViewControllerになると、一画面のメニューになる
+// UITableViewになると、テーブル（リスト）形式のメニューになる
+class SortMenuViewController: UIViewController{
 
     let rows = 2
     
     let sortMenu =  ["売れ筋順" ,"高評価順"]
 
-    let coView = UIView()
+    let uiView = UIView()
+
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         //        title = ""
 
-        preferredContentSize = CGSize(width: 300, height: 200)
-        view.addSubview(coView)
-        coView.backgroundColor = UIColor.blue
-        coView.translatesAutoresizingMaskIntoConstraints = false
+        let menuHeight = 88
+        let menuWidth = 250
+        
+        preferredContentSize = CGSize(width: menuWidth, height: menuHeight)
+        
+        for i in 0 ..< sortMenu.count {
+            let button = UIButton()
+            button.setTitle(" " + sortMenu[i], for: .normal)
+            button.titleEdgeInsets = UIEdgeInsets(top: 5.0, left: 10.0, bottom: 5.0, right: 7.0)
+            button.setTitleColor(.black, for: .normal)
+            button.contentHorizontalAlignment = .left
+            button.frame = CGRect(x:0, y:menuHeight / 2 * i, width:menuWidth, height: menuHeight / 2)
+            button.addTarget(self, action: #selector(self.tap), for: .touchUpInside)
+            button.tag = i
+            self.view.addSubview(button)
+        }
+        
+
+//        view.addSubview(uiView)
+//        uiView.backgroundColor = UIColor.blue
 
         
 //        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
@@ -37,8 +58,23 @@ class SortMenuViewController: UITableViewController {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        coView.frame = view.bounds
+        uiView.frame = view.bounds
     }
+    
+    
+    @objc func tap(_ sender:UIButton) {
+            print("\(sender.tag)番目がタップされた")
+            sender.isSelected = !sender.isSelected
+        }
+
+    @objc func onDone() {
+        dismiss(animated: true)
+    }
+
+    @objc func onDismiss() {
+        uiView.resignFirstResponder()
+    }
+
     
 //    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 //        return Int(rows)

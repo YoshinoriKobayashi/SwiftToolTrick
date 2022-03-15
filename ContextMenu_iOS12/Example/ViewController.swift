@@ -62,18 +62,20 @@ class ViewController: UIViewController, ContextMenuDelegate {
     @IBAction func sortButton(_ sender: Any) {
         ContextMenu.shared.show(
             sourceViewController: self,
-            viewController: SortMenuViewController(),
+            viewController: SortMenuViewController(), // メニューの中身を指定
             options: ContextMenu.Options(
                 containerStyle: ContextMenu.ContainerStyle(
                     shadowOpacity: 0.1,
-                    backgroundColor: .white,
-                    overlayColor: .clear
+                    xPadding: self.view.bounds.width,
+                    yPadding: self.sortButton.frame.maxY - 70,
+                    backgroundColor: .white, // メニューの背景
+                    overlayColor: .clear // 元画面の背景
                 ),
-                menuStyle: .default,
+                menuStyle: .minimal, // Hide the navigation bar in the menu.
                 hapticsStyle: .medium
             ),
-            sourceView: button,
-            delegate: self
+            sourceView: button
+//            delegate: self
         )
     }
     

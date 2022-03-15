@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="e4f-v2-AZw">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="sp0-q2-5Yi">
+            <objects>
+                <navigationController id="e4f-v2-AZw" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="RvQ-fr-ZS3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="EDa-Kx-2Bx" kind="relationship" relationship="rootViewController" id="nyi-3s-FFS"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hHR-Uj-gn5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-185" y="175"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="rxc-Qs-SX5">
+            <objects>
+                <viewController id="EDa-Kx-2Bx" customClass="ViewController" customModule="Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="XV0-SI-Dlz">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="detailDisclosure" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bMp-Tt-bsj">
+                                <rect key="frame" x="177" y="323" width="21" height="21"/>
+                                <connections>
+                                    <action selector="onButton:" destination="EDa-Kx-2Bx" eventType="touchUpInside" id="p1c-ix-C6I"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7wb-6n-2xQ">
+                                <rect key="frame" x="154.5" y="267" width="66" height="30"/>
+                                <state key="normal" title="Keyboard"/>
+                                <connections>
+                                    <action selector="onKeyboardButton:" destination="EDa-Kx-2Bx" eventType="touchUpInside" id="cq5-s1-ege"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mqw-o3-DWW">
+                                <rect key="frame" x="134.5" y="114.5" width="106" height="38"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="売れ筋順">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="sortButton:" destination="EDa-Kx-2Bx" eventType="touchUpInside" id="1GR-uc-qk0"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="0wB-Wa-A20"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="mqw-o3-DWW" firstAttribute="centerX" secondItem="XV0-SI-Dlz" secondAttribute="centerX" id="6MV-T5-TBH"/>
+                            <constraint firstItem="bMp-Tt-bsj" firstAttribute="top" secondItem="7wb-6n-2xQ" secondAttribute="bottom" constant="26" id="KiU-xP-eNi"/>
+                            <constraint firstItem="bMp-Tt-bsj" firstAttribute="centerY" secondItem="XV0-SI-Dlz" secondAttribute="centerY" id="iz2-Cf-TYK"/>
+                            <constraint firstItem="mqw-o3-DWW" firstAttribute="centerY" secondItem="XV0-SI-Dlz" secondAttribute="centerY" constant="-200" id="o6x-MY-tSa"/>
+                            <constraint firstItem="7wb-6n-2xQ" firstAttribute="centerX" secondItem="XV0-SI-Dlz" secondAttribute="centerX" id="vZG-CE-9Aq"/>
+                            <constraint firstItem="bMp-Tt-bsj" firstAttribute="centerX" secondItem="XV0-SI-Dlz" secondAttribute="centerX" id="zsN-8S-KnR"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="FIU-fZ-kBQ"/>
+                    <connections>
+                        <outlet property="button" destination="bMp-Tt-bsj" id="AYD-ZG-28j"/>
+                        <outlet property="keyboardButton" destination="7wb-6n-2xQ" id="Ufd-y1-qSe"/>
+                        <outlet property="sortButton" destination="mqw-o3-DWW" id="dM5-2X-TCJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hcb-0m-21I" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="565.60000000000002" y="232.53373313343329"/>
+        </scene>
+    </scenes>
+</document>

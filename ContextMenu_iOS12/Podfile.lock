@@ -1,0 +1,16 @@
+PODS:
+  - ContextMenu (0.4.0)
+
+DEPENDENCIES:
+  - ContextMenu
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - ContextMenu
+
+SPEC CHECKSUMS:
+  ContextMenu: f835e09a93f1c28c631b76ee94396d9570397fd1
+
+PODFILE CHECKSUM: 2c5cc83e52f1aeae7ac65cd593eb875f62e15937
+
+COCOAPODS: 1.11.2

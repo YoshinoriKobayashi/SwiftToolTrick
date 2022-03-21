@@ -9,6 +9,8 @@
 import RxSwift
 import RxCocoa
 
+// ViewControllerおよびViewModelで使われるValidationResultは、
+// このサンプル用のenumで複数あるバリデート処理結果のパターンを表現します。
 enum ValidationResult {
     case ok(message: String)
     case empty

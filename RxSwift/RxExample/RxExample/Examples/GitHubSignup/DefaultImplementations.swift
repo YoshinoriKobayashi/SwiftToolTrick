@@ -6,6 +6,9 @@
 //  Copyright © 2015 Krunoslav Zaher. All rights reserved.
 //
 
+// DefaultImplementations.swiftはGitHubサインアップ時のバリデートの実装及び、通信に関する実装をまとめています。
+// この実装を見る限り、実際にGitHubサインアップ自体は行っておらず、サインアップ処理の実装はモックでありランダムで成功か失敗かを返すだけでアカウントを作ることはないようになっています。
+
 import RxSwift
 import Foundation
 

@@ -24,11 +24,17 @@ This is example where view model is mutable. Some consider this to be MVVM, some
 class GithubSignupViewModel1 {
     // outputs {
 
+    // ViewModelの実装1 出力としてのプロパティを宣言
+    // サインアップ用に入力されたユーザ名のバリデート結果をストリームとしており、ValidationResultをイベントとして伝えます
+    // ValidationResultは、列挙体のステータス
     let validatedUsername: Observable<ValidationResult>
+    
     let validatedPassword: Observable<ValidationResult>
     let validatedPasswordRepeated: Observable<ValidationResult>
 
     // Is signup button enabled
+    // バリデート結果に問題なくサインアップできることを伝えるためのストリームとなります。
+    // 結果は2パターンで表現力を必要としないのでBoolになっているわけです。
     let signupEnabled: Observable<Bool>
 
     // Has user signed in
@@ -39,6 +45,7 @@ class GithubSignupViewModel1 {
 
     // }
 
+    // 役割1.API用のロジックなどをイニシャライザで外部から用意できるようにする
     init(input: (
             username: Observable<String>,
             password: Observable<String>,
@@ -62,6 +69,10 @@ class GithubSignupViewModel1 {
          Pure transformation of input sequences to output sequences.
         */
 
+        // ViewModelの実装2 イニシャライザで
+        // Observableをsubscribeせず出力へ変換している
+        // 実装2_2
+        // 役割2：イニシャライザで受け取ったObservableを処理して出力に変換
         validatedUsername = input.username
             .flatMapLatest { username in
                 return validationService.validateUsername(username)
@@ -70,20 +81,24 @@ class GithubSignupViewModel1 {
             }
             .share(replay: 1)
 
+        // ViewModelの実装2_1
         validatedPassword = input.password
             .map { password in
                 return validationService.validatePassword(password)
             }
             .share(replay: 1)
 
+        // ViewModelの実装2_3
         validatedPasswordRepeated = Observable.combineLatest(input.password, input.repeatedPassword, resultSelector: validationService.validateRepeatedPassword)
             .share(replay: 1)
 
         let signingIn = ActivityIndicator()
         self.signingIn = signingIn.asObservable()
 
+        // ViewModelの実装2_4
         let usernameAndPassword = Observable.combineLatest(input.username, input.password) { (username: $0, password: $1) }
 
+        // ViewModelの実装2_5
         signedIn = input.loginTaps.withLatestFrom(usernameAndPassword)
             .flatMapLatest { pair in
                 return API.signup(pair.username, password: pair.password)

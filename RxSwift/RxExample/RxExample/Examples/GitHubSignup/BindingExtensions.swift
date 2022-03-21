@@ -6,6 +6,8 @@
 //  Copyright © 2015 Krunoslav Zaher. All rights reserved.
 //
 
+// BindingExtensions.swiftはこのサンプル用のextensionを集めたUtilityのようなものとなっています
+
 import UIKit
 import RxSwift
 import RxCocoa

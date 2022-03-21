@@ -11,6 +11,8 @@ import RxSwift
 import RxCocoa
 
 class GitHubSignupViewController1 : ViewController {
+    // ViewControllerの実装1
+    // @IBOutletをViewControllerに接続
     @IBOutlet weak var usernameOutlet: UITextField!
     @IBOutlet weak var usernameValidationOutlet: UILabel!
     
@@ -26,8 +28,13 @@ class GitHubSignupViewController1 : ViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        // ViewControllerの実装2、ViewModelを初期化
+        // 役割2:ViewModelを初期化する
+        // 役割3：ViewModelの出力とUIコンポーネントをバインドする
         let viewModel = GithubSignupViewModel1(
+            // Obserbvableを渡す、ストリーム
             input: (
+                // ViewControllerの実装2_1
                 username: usernameOutlet.rx.text.orEmpty.asObservable(),
                 password: passwordOutlet.rx.text.orEmpty.asObservable(),
                 repeatedPassword: repeatedPasswordOutlet.rx.text.orEmpty.asObservable(),
@@ -40,7 +47,9 @@ class GitHubSignupViewController1 : ViewController {
             )
         )
 
-        // bind results to  {
+        // ViewControllerの実装3.ViewModelのアウトプットからViewにbind
+        // ViewControllerの実装3_1
+        // 役割3.ViewModelの出力とUIコンポーネントをバインドする
         viewModel.signupEnabled
             .subscribe(onNext: { [weak self] valid  in
                 self?.signupOutlet.isEnabled = valid
@@ -48,6 +57,7 @@ class GitHubSignupViewController1 : ViewController {
             })
             .disposed(by: disposeBag)
 
+        // ViewControllerの実装3_2
         viewModel.validatedUsername
             .bind(to: usernameValidationOutlet.rx.validationResult)
             .disposed(by: disposeBag)
@@ -71,6 +81,8 @@ class GitHubSignupViewController1 : ViewController {
             .disposed(by: disposeBag)
         //}
 
+        // ViewControllerの実装4 画面をタップされるジェスチャーを設定
+        // 入力モードを終了して、ソフトフェアキーボードを閉じる
         let tapBackground = UITapGestureRecognizer()
         tapBackground.rx.event
             .subscribe(onNext: { [weak self] _ in

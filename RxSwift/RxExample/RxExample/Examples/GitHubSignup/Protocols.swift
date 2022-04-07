@@ -12,10 +12,10 @@ import RxCocoa
 // ViewControllerおよびViewModelで使われるValidationResultは、
 // このサンプル用のenumで複数あるバリデート処理結果のパターンを表現します。
 enum ValidationResult {
-    case ok(message: String)
-    case empty
-    case validating
-    case failed(message: String)
+    case ok(message: String)    // 問題なし
+    case empty                     // 入力が空
+    case validating                 // バリデート中
+    case failed(message: String)    // 失敗
 }
 
 enum SignupState {

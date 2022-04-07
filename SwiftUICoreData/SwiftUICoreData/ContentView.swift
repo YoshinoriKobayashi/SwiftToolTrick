@@ -26,8 +26,10 @@ struct ContentView: View {
     // predicate:NSPredicateは、フェッチされた結果に対するフィルタを定義します。.
     @FetchRequest(
         entity: Task.entity(),
-        sortDescriptors: [NSSortDescriptor(keyPath: \Task.timestamp, ascending: true)],
-        predicate: nil) private var tasks: FetchedResults<Task>
+        sortDescriptors: [NSSortDescriptor(keyPath: \Task.timestamp, ascending: true)], predicate: nil)
+    
+    //
+    private var tasks: FetchedResults<Task>
     
     var body: some View {
         NavigationView {

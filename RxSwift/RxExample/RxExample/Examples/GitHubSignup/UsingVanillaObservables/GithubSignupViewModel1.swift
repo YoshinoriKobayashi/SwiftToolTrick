@@ -26,6 +26,8 @@ class GithubSignupViewModel1 {
 
     // ViewModelの実装1 出力としてのプロパティを宣言
     // サインアップ用に入力されたユーザ名のバリデート結果をストリームとしており、ValidationResultをイベントとして伝えます
+    // ViewControllerおよびViewModelで使われるValidationResultは、
+    // このサンプル用のenumで複数あるバリデート処理結果のパターンを表現します
     // ValidationResultは、列挙体のステータス
     let validatedUsername: Observable<ValidationResult>
     

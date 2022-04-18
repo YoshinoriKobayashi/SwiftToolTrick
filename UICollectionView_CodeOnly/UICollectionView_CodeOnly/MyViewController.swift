@@ -68,6 +68,7 @@ class MyViewController: UIViewController, UICollectionViewDataSource, UICollecti
         return fruits.count
     }
 
+    // データソースオブジェクトに、コレクションビューの指定された項目に対応するセルを問い合わせる。
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCell", for: indexPath) as! CollectionViewCell
 

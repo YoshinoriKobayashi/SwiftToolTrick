@@ -29,6 +29,7 @@ class ViewController: UIViewController {
 
     private var dragging = false
 
+    // スクロールを考慮した画像
     lazy private var imageViews: [UIImageView] = {
         let imageViews = [
             UIImageView(frame: .zero),
@@ -77,13 +78,16 @@ class ViewController: UIViewController {
     }
 
     private func configureGesture() {
+        //scrollViewのジャスチャーを取得
         scrollView.gestureRecognizers?.forEach({ recognizer in
             if recognizer is UISwipeGestureRecognizer
                 || recognizer is UIPanGestureRecognizer {
+                // Viewにジャスチャーを追加
                 view.addGestureRecognizer(recognizer)
             }
         })
     }
+    //landscape、portraitでのAutolayout調整
     private func updateViewConstraints(to size: CGSize) {
         var frameWidthRatio = CGFloat(1.0)
         var frameHeightRatio = CGFloat(1.0)
@@ -117,7 +121,7 @@ class ViewController: UIViewController {
         }
     }
 
-
+    // 最初の3枚の画像を設定
     private func prepareImagesAndViews() {
         (0..<3).forEach { i in
             let image = fetcher.fetchRandomImage()
@@ -129,8 +133,10 @@ class ViewController: UIViewController {
 
     // 各ページのフレーム設定をするコード例
     private func layoutImages() {
+        // nは0から始まる連続した整数，xはその配列の要素を表す，ペアのシーケンス（n，x）を返す。
         imageViews.enumerated().forEach { (index: Int, imageView: UIImageView) in
             imageView.image = images[index]
+            // 画像を横に並べる
             imageView.frame = CGRect(x: scrollViewSize.width * CGFloat(index),
                                      y: 0,
                                      width: scrollViewSize.width,
@@ -174,7 +180,8 @@ extension ViewController: UIScrollViewDelegate {
             layoutImages()
             // 3. ビューポートの調整
             scrollView.contentOffset.x -= scrollViewSize.width
-        }_vhange
+        }
+        // 左にスワイプ
         if (offsetX < scrollView.frame.size.width * 0.5) {
             // 1. モデルをアップデート。n+1 ページ目を削除して, n-2 ページ目を追加
             let newImage = fetcher.fetchRandomImage()

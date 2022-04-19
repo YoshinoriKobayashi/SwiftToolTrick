@@ -4,6 +4,10 @@
   
 # iOS-PeekABoo
 
+- ScrollViewを使ったページおくり
+- 対象のページでピタッととまる。途中で止まらない。
+
+
 Sample app to demonstrate infinite scrolling using `UIScrollView`.
 
 - [英語|English](https://medium.com/@yfujiki/infinite-uiscrollview-with-paging-46c07e44a106)

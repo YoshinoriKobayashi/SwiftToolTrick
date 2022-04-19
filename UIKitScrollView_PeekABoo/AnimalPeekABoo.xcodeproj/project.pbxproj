@@ -15,6 +15,7 @@
 		DBB200CC21B4817C00849012 /* AnimalPeekABooTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB200CB21B4817C00849012 /* AnimalPeekABooTests.swift */; };
 		DBB200D721B4817C00849012 /* AnimalPeekABooUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB200D621B4817C00849012 /* AnimalPeekABooUITests.swift */; };
 		DBB200E521B484E600849012 /* ImageFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB200E421B484E600849012 /* ImageFetcher.swift */; };
+		FA8C0C9F280E79C80045EAF9 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = FA8C0C9E280E79C80045EAF9 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		DBB200D621B4817C00849012 /* AnimalPeekABooUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalPeekABooUITests.swift; sourceTree = "<group>"; };
 		DBB200D821B4817C00849012 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DBB200E421B484E600849012 /* ImageFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageFetcher.swift; sourceTree = "<group>"; };
+		FA8C0C9E280E79C80045EAF9 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +126,7 @@
 			children = (
 				DBB200D621B4817C00849012 /* AnimalPeekABooUITests.swift */,
 				DBB200D821B4817C00849012 /* Info.plist */,
+				FA8C0C9E280E79C80045EAF9 /* README.md */,
 			);
 			path = AnimalPeekABooUITests;
 			sourceTree = "<group>";
@@ -252,6 +255,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA8C0C9F280E79C80045EAF9 /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

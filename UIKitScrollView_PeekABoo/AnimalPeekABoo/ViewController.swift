@@ -139,14 +139,20 @@ class ViewController: UIViewController {
 }
 
 extension ViewController: UIScrollViewDelegate {
+
+    // スクロールビューがスクロールの動きを減速し始めたことをデリゲートに通知します。
     func scrollViewWillBeginDecelerating(_ scrollView: UIScrollView) {
         dragging = true
     }
 
+    // スクロールビューのスクロール動作の減速が終了したことをデリゲートに伝えます。
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         dragging = false
     }
 
+    // ユーザが Receiver 内のコンテンツビューをスクロールしたことをデリゲートに通知する。
+    // デリゲートは通常このメソッドを実装し、scrollView
+    // からコンテンツオフセットの変化を取得し、コンテンツビューの影響を受ける部分を描画します。
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if !dragging {
             return

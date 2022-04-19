@@ -126,7 +126,8 @@ class ViewController: UIViewController {
             scrollView.addSubview(imageViews[i])
         }
     }
-    
+
+    // 各ページのフレーム設定をするコード例
     private func layoutImages() {
         imageViews.enumerated().forEach { (index: Int, imageView: UIImageView) in
             imageView.image = images[index]
@@ -158,21 +159,30 @@ extension ViewController: UIScrollViewDelegate {
             return
         }
 
+        // UIScrollViewのスクロール位置が初期状態(= contentOffset = {0, 0}）の状態から
+        // x, y方向にどれだけスクロールしたかを表す。y方向に+100pxスクロールしたらcontentOffsetは{0,100}になる。
         let offsetX = scrollView.contentOffset.x
-        
+
+        // scrollView.frame.size.widthは見えている枠の横幅
+        // 右にスワイプ
         if (offsetX > scrollView.frame.size.width * 1.5) {
+            // 1. モデルをアップデート。n-1 ページ目を削除して, n+2 ページ目を追加
             let newImage = fetcher.fetchRandomImage()
             images.remove(at: 0)
             images.append(newImage)
+            // 2. 後述。n ページ目から n+2 ページのフレーム設定
             layoutImages()
+            // 3. ビューポートの調整
             scrollView.contentOffset.x -= scrollViewSize.width
-        }
-
+        }_vhange
         if (offsetX < scrollView.frame.size.width * 0.5) {
+            // 1. モデルをアップデート。n+1 ページ目を削除して, n-2 ページ目を追加
             let newImage = fetcher.fetchRandomImage()
             images.removeLast()
             images.insert(newImage, at: 0)
+            // 2. 後述。n-2 ページ目から n ページのフレーム設定
             layoutImages()
+            // 3. ビューポートの調整
             scrollView.contentOffset.x += scrollViewSize.width
         }
     }

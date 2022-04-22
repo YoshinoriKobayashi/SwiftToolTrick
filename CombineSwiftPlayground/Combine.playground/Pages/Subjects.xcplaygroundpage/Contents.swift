@@ -3,13 +3,6 @@ import Foundation
 import Combine
 
 /*:
-# Subjects
-- A subject is a publisher ...
-- ... relays values it receives from other publishers ...
-- ... can be manually fed with new values
-- ... subjects as also subscribers, and can be used with `subscribe(_:)`
-*/
-/*:
 # 件名
 - サブジェクトとは，パブリッシャーのことである．
 - ... 他のパブリッシャーから受け取った値を中継する ...
@@ -19,9 +12,12 @@ import Combine
 
 /*:
 ## Example 1
-Using a subject to relay values to subscribers
-サブジェクトを利用して、購読者に価値をリレーする。
+サブジェクトを利用して、購読者（subscribers）に値（values）をリレー（relay）する。
 */
+// PassthroughSubject
+// https://developer.apple.com/documentation/combine/passthroughsubject
+// PassthroughSubjectはCurrentValueSubjectとは異なり値を保持しません。
+// 値を保持する必要なく毎回データを更新（上書き）するような場合はPassthroughSubjectを使うと良いです。
 let relay = PassthroughSubject<String, Never>()
 
 let subscription = relay

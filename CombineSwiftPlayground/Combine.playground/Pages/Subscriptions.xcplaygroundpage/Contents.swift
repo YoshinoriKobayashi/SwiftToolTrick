@@ -4,15 +4,8 @@ import Combine
 import UIKit
 
 /*:
- ## Subscription details
- - A subscriber will receive a _single_ subscription
- - _Zero_ or _more_ values can be published
- - At most _one_ {completion, error} will be called
- - After completion, nothing more is received
- */
-/*:
- ## 購読の詳細
- - 購読者は、_single_購読を受け取ります。
+ ## 購読（Subscription）の詳細
+ - 購読者（subscriber）は、_single_ subscriptionを受け取ります。
  - ゼロまたはそれ以上の値を公開することができる
  - 最大で_one_ {completion, error}が呼び出されます。
  - 完了後、それ以上何も受信しない

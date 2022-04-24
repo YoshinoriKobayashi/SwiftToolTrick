@@ -6,3 +6,9 @@
  */
 import Combine
 //: [Next](@next)
+
+
+//Publishers -> イベントの発行者です
+//Subscribers -> イベントの購読者です
+//Operators -> 流れてくる値を加工することができます
+

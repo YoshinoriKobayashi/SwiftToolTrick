@@ -1,29 +1,25 @@
 //
 //  main.m
-//  Study08
+//  Study09
 //
-//  Created by kobayashi on 2022/04/28.
+//  Created by kobayashi on 2022/05/02.
 //
 
 #import <UIKit/UIKit.h>
 #import "AppDelegate.h"
-#import "Study08.h"
-
+#import "Study09Super.h"
+#import "Study09Sub.h"
 
 int main(int argc, char * argv[]) {
     NSString * appDelegateClassName;
     @autoreleasepool {
-
-        Study08 *st = [Study08 new]; //インスタンス生成
-        st.name = @"いざわたけし";
-        st.age = 38;
-        st.pass = @YES;
-        [st disp]; // メソッドは [インスタンス名 メソッド名]で[]が必要
-
-        st.name = @"やまだ　たろう";
-        st.age = 19;
-        st.pass = @NO;
+        //インスタンスを作る
+        Study09Super *st = [Study09Super new];
         [st disp];
+
+        Study09Sub *st2 = [Study09Sub new];
+        [st2 disp];
+        [st2 disp2];
 
 
         // Setup code that might create autoreleased objects goes here.

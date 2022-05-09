@@ -11,6 +11,19 @@
 int main(int argc, char * argv[]) {
     NSString * appDelegateClassName;
     @autoreleasepool {
+
+        //クラスメソッド
+        //クラスと関連付けられたメソッド
+        //呼び出し方法は[クラス名 メソッド名]
+        //・Objective-Cにはクラス変数という考え方がない
+        //・そのかわり.mファイルの中にstatic修飾子をつけた変数をクラス変数として扱う
+        //・クラス初期化は+(void)initializeクラスメソッドをオーバーライドして記述
+
+
+
+
+
+
         // Setup code that might create autoreleased objects goes here.
         appDelegateClassName = NSStringFromClass([AppDelegate class]);
     }

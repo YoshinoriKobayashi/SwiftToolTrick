@@ -14,6 +14,7 @@
 		FA017EA22825E47B0059D480 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA017EA12825E47B0059D480 /* Assets.xcassets */; };
 		FA017EA52825E47B0059D480 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA017EA32825E47B0059D480 /* LaunchScreen.storyboard */; };
 		FA017EA82825E47B0059D480 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FA017EA72825E47B0059D480 /* main.m */; };
+		FA017EB02825F38C0059D480 /* Study10.m in Sources */ = {isa = PBXBuildFile; fileRef = FA017EAF2825F38C0059D480 /* Study10.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,8 @@
 		FA017EA42825E47B0059D480 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FA017EA62825E47B0059D480 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA017EA72825E47B0059D480 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		FA017EAE2825F38C0059D480 /* Study10.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Study10.h; sourceTree = "<group>"; };
+		FA017EAF2825F38C0059D480 /* Study10.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Study10.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +75,8 @@
 				FA017EA32825E47B0059D480 /* LaunchScreen.storyboard */,
 				FA017EA62825E47B0059D480 /* Info.plist */,
 				FA017EA72825E47B0059D480 /* main.m */,
+				FA017EAE2825F38C0059D480 /* Study10.h */,
+				FA017EAF2825F38C0059D480 /* Study10.m */,
 			);
 			path = Study10;
 			sourceTree = "<group>";
@@ -148,6 +153,7 @@
 			files = (
 				FA017E9D2825E4770059D480 /* ViewController.m in Sources */,
 				FA017E972825E4770059D480 /* AppDelegate.m in Sources */,
+				FA017EB02825F38C0059D480 /* Study10.m in Sources */,
 				FA017EA82825E47B0059D480 /* main.m in Sources */,
 				FA017E9A2825E4770059D480 /* SceneDelegate.m in Sources */,
 			);

@@ -18,6 +18,8 @@ class LoginViewModelSpec: QuickSpec {
             loginViewModel = LoginViewModel()
         }
 
+        //ここではemailに対して["", a@example.com, ""]をemitするHotObservableをバインドし、
+        //isValidEmailは[false, false, true, false]をオブザーバに通知することをテストしようとしています。
         describe("isValidEmail") {
             it("should be true when email is not empty") {
                 let xs = scheduler.createHotObservable([
@@ -33,6 +35,9 @@ class LoginViewModelSpec: QuickSpec {
 
                 scheduler.start()
 
+                //ここで、時刻0でfalseとなっているのは、
+                //BehaviorRelayはオブザーバがサブスクライブしたときに
+                //最後の要素をemitする(リプレイする)という性質があるためです。
                 expect(observer.events).to(equal([
                     Recorded.next(0, false),
                     Recorded.next(10, false),
@@ -41,7 +46,11 @@ class LoginViewModelSpec: QuickSpec {
                 ]))
             }
         }
-        
+
+        //はじめに、2つのHotObservableを作成し、それぞれLoginViewModelのemailとpasswordにバインドします。
+        //次に、オブザーバを作成し、LoginViewModelのisValidFormにサブスクライブさせます。
+        //ここで期待しているのは、emailとpassword両方のフィールドが有効なときのみisValidFormがtrueになることです。
+        //今回の場合、時刻40のときにどちらのフィールドにも文字が1文字以上入力されている状態になるので、時刻40のときにisValidFormがtrueになります。
         describe("isValidForm") {
             it("should be true when both email and password are valid") {
                 let xs1 = scheduler.createHotObservable([
@@ -55,7 +64,7 @@ class LoginViewModelSpec: QuickSpec {
                     Recorded.next(40, "passw0rd"),
                     Recorded.next(60, "")
                 ])
-                
+
                 xs1.bind(to: loginViewModel.email).disposed(by: disposeBag)
                 xs2.bind(to: loginViewModel.password).disposed(by: disposeBag)
                 

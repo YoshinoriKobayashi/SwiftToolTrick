@@ -6,6 +6,12 @@ struct User: Decodable, Equatable {
     let name: String
 }
 
+//APIクライアント
+//HTTP通信を行うAPIクライアントクラスのメソッドの戻り値の型はSingleを使うことが多いですが、これはBlockingパターンを使用できる典型的な例です。
+//自分は使ったことがないですが、CompletableやMaybeを返す関数もBlockingパターンが使えます。
+
+//これらのObservableは必ずcompletedかerrorイベントをemitします。
+//なのでRxBlockingによってこれらのイベントがemitされるまでブロックし、最後に結果を検証する事ができます。
 class UserService {
     func fetchUser(by userId: Int) -> Single<User> {
         return Single.create { single in

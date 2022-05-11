@@ -48,9 +48,8 @@ final public class MetronomeViewController: UIViewController {
 
   private let disposeBag = DisposeBag()
 
-  // MARK: - Dependencies
-  // In a real-life example, these would all be injected
-  // externally, and not created by the ViewController itself.
+  // MARK: - Dependencies：依存関係
+  // 実際の例では、これらはすべて外部から注入されます。ViewController 自身が作成することはありません。
   private let viewModel = MetronomeViewModel()
   private let player = SimplePlayer()
 
@@ -60,9 +59,7 @@ final public class MetronomeViewController: UIViewController {
 
     try! player.prepare(Beat.allCases)
 
-    // Prevent bindings and layout while testing.
-    // Usually, this doesn't matter, but since we're playing audio,
-    // this could get a tad annoying ;-]
+    // 通常、これは問題ではありませんが、オーディオを再生しているので、これはちょっと迷惑かもしれません。
     guard !UIApplication.isBeingTested else {
       return
     }
@@ -72,9 +69,14 @@ final public class MetronomeViewController: UIViewController {
     //---------------|
 
     // Inputs
-    stepNumerator.rx.value
-      .bind(to: viewModel.steppedNumerator)
-      .disposed(by: disposeBag)
+    // stepNumeratorは、UIStepper
+    // https://swift.tecc0.com/?p=686
+    // valueは、UIStepperのvalueのこと
+  stepNumerator.rx.value
+    // to:イベントを受信するオブザーバー
+    //stepNumeratorでのイベントをviewModel.steppedNumeratorへ流す
+    .bind(to: viewModel.steppedNumerator)
+    .disposed(by: disposeBag)
 
     stepDenominator.rx.value
       .bind(to: viewModel.steppedDenominator)

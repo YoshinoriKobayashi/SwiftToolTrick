@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.13.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="w8R-T2-seN">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="w8R-T2-seN">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.9"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dWF-p6-S2r" userLabel="Metronome COntainer">
-                                <rect key="frame" x="22" y="135" width="331" height="417"/>
+                                <rect key="frame" x="22" y="125" width="331" height="417"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SignatureContainer" translatesAutoresizingMaskIntoConstraints="NO" id="1cg-eh-Mf7">
                                         <rect key="frame" x="60.5" y="42" width="210" height="90"/>
@@ -40,23 +39,23 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minimumValue="1" maximumValue="4" translatesAutoresizingMaskIntoConstraints="NO" id="gOA-8U-OlH">
-                                        <rect key="frame" x="168" y="136" width="94" height="29"/>
+                                        <rect key="frame" x="168" y="136" width="94" height="32"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" red="0.2627450980392157" green="0.90196078431372551" blue="0.58431372549019611" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </stepper>
                                     <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="4" minimumValue="1" maximumValue="4" translatesAutoresizingMaskIntoConstraints="NO" id="NkK-fY-DhW">
-                                        <rect key="frame" x="69" y="136" width="94" height="29"/>
+                                        <rect key="frame" x="69" y="136" width="94" height="32"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" red="0.26274509800000001" green="0.90196078430000004" blue="0.58431372550000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </stepper>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Signature" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N57-Ou-oOT">
-                                        <rect key="frame" x="69" y="180" width="193" height="20"/>
+                                        <rect key="frame" x="69" y="183" width="193" height="20"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Awk-bj-bCK" userLabel="Signature Field Container">
-                                        <rect key="frame" x="83" y="204" width="165" height="39"/>
+                                        <rect key="frame" x="83" y="207" width="165" height="39"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FieldContainer" translatesAutoresizingMaskIntoConstraints="NO" id="7DS-iM-FL8">
                                                 <rect key="frame" x="0.0" y="0.0" width="165" height="39"/>
@@ -83,17 +82,17 @@
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tempo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KtR-5k-Wdy">
-                                        <rect key="frame" x="69" y="257" width="193" height="20"/>
+                                        <rect key="frame" x="69" y="260" width="193" height="20"/>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="120" minValue="60" maxValue="180" translatesAutoresizingMaskIntoConstraints="NO" id="ztO-3O-lgl">
-                                        <rect key="frame" x="18" y="285" width="295" height="31"/>
+                                        <rect key="frame" x="18" y="288" width="295" height="31"/>
                                         <color key="tintColor" red="0.23921568627450979" green="0.74117647058823533" blue="0.69411764705882351" alpha="1" colorSpace="calibratedRGB"/>
                                     </slider>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lsh-ZE-N9R" userLabel="Signature Field Container">
-                                        <rect key="frame" x="83" y="328" width="165" height="39"/>
+                                        <rect key="frame" x="83" y="331" width="165" height="39"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="FieldContainer" translatesAutoresizingMaskIntoConstraints="NO" id="bvU-My-nZA">
                                                 <rect key="frame" x="0.0" y="0.0" width="165" height="39"/>
@@ -160,14 +159,14 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MetronomeCenter" translatesAutoresizingMaskIntoConstraints="NO" id="u4J-4L-5To">
-                                <rect key="frame" x="141" y="49" width="93" height="114"/>
+                                <rect key="frame" x="141" y="39" width="93" height="114"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="114" id="CC9-YM-2eM"/>
                                     <constraint firstAttribute="width" constant="93" id="NWs-bl-CO0"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UBh-Zt-LCs">
-                                <rect key="frame" x="141" y="505.5" width="93" height="93"/>
+                                <rect key="frame" x="141" y="495.5" width="93" height="93"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="93" id="bcO-6l-d2t"/>
                                     <constraint firstAttribute="width" constant="93" id="gsd-xG-yAD"/>
@@ -175,6 +174,7 @@
                                 <state key="normal" image="BtnPlay"/>
                             </button>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="loW-0r-ARW"/>
                         <color key="backgroundColor" red="0.16078431372549018" green="0.16078431372549018" blue="0.16078431372549018" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="UBh-Zt-LCs" firstAttribute="top" secondItem="dWF-p6-S2r" secondAttribute="bottom" constant="-46.5" id="ESm-8P-r89"/>
@@ -189,7 +189,6 @@
                                 <variation key="heightClass=regular-widthClass=regular" constant="120"/>
                             </constraint>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="loW-0r-ARW"/>
                     </view>
                     <connections>
                         <outlet property="btnPlayBause" destination="UBh-Zt-LCs" id="ecZ-zo-wcr"/>

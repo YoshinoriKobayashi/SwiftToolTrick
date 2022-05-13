@@ -15,7 +15,9 @@ struct ContentView: View {
     //GridItemインスタンスは、LazyHGridやLazyVGridビューの
     //アイテムのレイアウトを設定するために使用する
     //GridItemが3つあるのは、3カラムのレイアウト
-//    private var gridItemLayout = [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())]
+    private var gridItemLayout = [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())]
+//    private var gridItemLayout: [GridItem] =
+//    Array(repeating: .init(.flexible()), count: 3)
 
     //.flexible
     //6列のグリッドを記述したい場合は、このようにGridItemの配列を作成します
@@ -40,46 +42,49 @@ struct ContentView: View {
 
     //より複雑なレイアウト
     //固定サイズのGridItemと、それに続く適応的なサイズのGridItemの指定
-    private var gridItemLayout = [GridItem(.fixed(150)), GridItem(.adaptive(minimum: 50))]
+//    private var gridItemLayout = [GridItem(.fixed(150)), GridItem(.adaptive(minimum: 50))]
     //LazyVGridは150ポイント幅の固定サイズのカラムを作成。
     //そして、残りのスペースにできるだけ多くの項目を埋めようとします。
 
 
     var body: some View {
-//        ScrollView {
-            //LazyVGrid:縦方向
-            //columns：カラム
-            //spacing：行間
-//            LazyVGrid(columns: gridItemLayout,spacing: 20) {
-//                ForEach(0...999, id: \.self) {
-//                    //$0には0...999のインデクス番号が入っている
-//                    let _ = print("$0:\($0)")
-//                    let _ = print("symbols.count:\(symbols.count)")
-//                    let _ = print("$0 % symbols.count:\($0 % symbols.count)")
-//                    //%剰余を使うことで順番に
+        ScrollView {
+//            LazyVGrid:縦方向
+//            columns：カラム
+//            spacing：行間
+            LazyVGrid(columns: gridItemLayout,spacing: 20) {
+                ForEach(0...999, id: \.self) {
+                    //$0には0...999のインデクス番号が入っている
+                    let _ = print("$0:\($0)")
+                    let _ = print("symbols.count:\(symbols.count)")
+                    let _ = print("$0 % symbols.count:\($0 % symbols.count)")
+                    //%剰余を使うことで順番に
+                    Image(systemName: symbols[$0 % symbols.count])
+                        .font(.system(size: 30))
+//                        .frame(width: 50, height: 50)
+                        //画像の幅がカラム幅いっぱいになるようにする
+                        .frame(minWidth: 0, maxWidth: .infinity, minHeight: 50)
+                        .background(colors[$0 % colors.count])
+                        .cornerRadius(10)
+                        .onTapGesture {
+                            print("タップされた")
+                        }
+                }
+            }
+        }
+
+        //横長のグリッド
+//        ScrollView(.horizontal) {
+//            LazyHGrid(rows: gridItemLayout, spacing: 20) {
+//                ForEach((0...9999), id: \.self) {
 //                    Image(systemName: symbols[$0 % symbols.count])
 //                        .font(.system(size: 30))
-////                        .frame(width: 50, height: 50)
-//                        //画像の幅がカラム幅いっぱいになるようにする
-//                        .frame(minWidth: 0, maxWidth: .infinity, minHeight: 50)
+//                        .frame(minWidth: 0, maxWidth: .infinity, minHeight: 50,maxHeight: .infinity)
 //                        .background(colors[$0 % colors.count])
 //                        .cornerRadius(10)
 //                }
 //            }
 //        }
-
-        //横長のグリッド
-        ScrollView(.horizontal) {
-            LazyHGrid(rows: gridItemLayout, spacing: 20) {
-                ForEach((0...9999), id: \.self) {
-                    Image(systemName: symbols[$0 % symbols.count])
-                        .font(.system(size: 30))
-                        .frame(minWidth: 0, maxWidth: .infinity, minHeight: 50,maxHeight: .infinity)
-                        .background(colors[$0 % colors.count])
-                        .cornerRadius(10)
-                }
-            }
-        }
 
 
     }

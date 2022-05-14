@@ -29,8 +29,8 @@ struct ContentView: View {
 
     //.adaptive
     //アダプティブサイズタイプでは、アイテムの最小サイズを指定する必要があります。
-    //下のコードでは、各グリッドのアイテムの最小サイズは 50 です
-//    private var gridItemLayout = [GridItem(.adaptive(minimum: 50))]
+    //下のコードでは、各グリッドのアイテムの最小サイズは 40 です
+//    private var gridItemLayout = [GridItem(.adaptive(minimum: 40))]
     //.adaptive(minimum: 50)を使うことで、LazyVGridは各項目の最小サイズが
     //50ポイントになるように、できるだけ多くの画像を一列に並べるよう指示。
 
@@ -42,38 +42,38 @@ struct ContentView: View {
 
     //より複雑なレイアウト
     //固定サイズのGridItemと、それに続く適応的なサイズのGridItemの指定
-//    private var gridItemLayout = [GridItem(.fixed(150)), GridItem(.adaptive(minimum: 50))]
+//    private var gridItemLayout = [GridItem(.fixed(150)), GridItem(.adaptive(minimum: 0, maximum: 50))]
     //LazyVGridは150ポイント幅の固定サイズのカラムを作成。
     //そして、残りのスペースにできるだけ多くの項目を埋めようとします。
 
 
-    var body: some View {
-        ScrollView {
+var body: some View {
+    ScrollView{
 //            LazyVGrid:縦方向
 //            columns：カラム
 //            spacing：行間
-            LazyVGrid(columns: gridItemLayout,spacing: 20) {
-                ForEach(0...999, id: \.self) {
-                    //$0には0...999のインデクス番号が入っている
-                    let _ = print("$0:\($0)")
-                    let _ = print("symbols.count:\(symbols.count)")
-                    let _ = print("$0 % symbols.count:\($0 % symbols.count)")
-                    //%剰余を使うことで順番に
-                    Image(systemName: symbols[$0 % symbols.count])
-                        .font(.system(size: 30))
+        LazyVGrid(columns: gridItemLayout,spacing: 20) {
+            ForEach(0...999, id: \.self) {
+                //$0には0...999のインデクス番号が入っている
+                let _ = print("$0:\($0)")
+                let _ = print("symbols.count:\(symbols.count)")
+                let _ = print("$0 % symbols.count:\($0 % symbols.count)")
+                //%剰余を使うことで順番に
+                Image(systemName: symbols[$0 % symbols.count])
+                    .font(.system(size: 30))
 //                        .frame(width: 50, height: 50)
-                        //画像の幅がカラム幅いっぱいになるようにする
-                        .frame(minWidth: 0, maxWidth: .infinity, minHeight: 50)
-                        .background(colors[$0 % colors.count])
-                        .cornerRadius(10)
-                        .onTapGesture {
-                            print("タップされた")
-                        }
-                }
+                    //画像の幅がカラム幅いっぱいになるようにする
+                    .frame(minWidth: 0, maxWidth: .infinity, minHeight: 50)
+                    .background(colors[$0 % colors.count])
+                    .cornerRadius(10)
+//                    .onTapGesture {
+//                        print("タップされた")
+//                    }
             }
         }
+    }
 
-        //横長のグリッド
+//        //横長のグリッド
 //        ScrollView(.horizontal) {
 //            LazyHGrid(rows: gridItemLayout, spacing: 20) {
 //                ForEach((0...9999), id: \.self) {

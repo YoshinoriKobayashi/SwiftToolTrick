@@ -65,3 +65,87 @@ protocol Staff:Human { // プロトコルを継承
 }
 
 // List5-6 プロトコルHumanとStaffの両方で宣言されたメソッド、プロパティを使う
+struct Employee : Staff { // プロトコルStaffを採用
+    let name: String? // Humanプロトコル
+    var title: String = "" // Staffプロトコル
+    func sayHello(to p: Human) { // Humanプロトコル
+        let s = "ご苦労様です"
+        if let who = p.name { s + "、" + who + "さん"}
+    }
+}
+
+// List 5-7 プロトコルHumanに適合する構造体Student
+protocol FullName {
+    var lastname: String{ get } //　苗字
+    var firstname: String { get }  // 名前
+}
+
+struct Student: Human, FullName {
+    let lastname: String
+    let firstname: String
+    var name: String? {  // 計算型プロパティで実装
+        return lastname + firstname //FullName　プロトコル
+    }
+    func sayHello(to p: Human) {
+        let s = "こんにちは"
+        if let who = p.name { s + "、" + who + "さん"}
+        print(s)
+    }
+
+}
+
+var a  = Mob()
+var b = Employee(name: "安岡", title: "ボディガード")
+var c = Student(lastname: "夏川", firstname: "真鍋")
+a.sayHello(to: b)
+b.sayHello(to: c)
+c.sayHello(to: a)
+
+// List5-8プロコトルに付属型を宣言
+protocol SimpleVector {
+    associatedtype Element      // 付属型（ジェネリクス）
+    var x : Element { get set } // Elementが型パタメータ
+    var y : Element { get set } // コンパイル時に型がわりあて
+}
+
+// List5-9 付属型のあるプロトコルの利用例
+struct VectorFloat: SimpleVector {
+    // プロトコル付属型ElementはFloat型であることを、typealiasを使って明示
+    typealias Element = Float
+    var x, y: Float
+}
+// VectorDoubleをコンパイルしたときに型がきまる
+struct VectorDouble:SimpleVector,CustomStringConvertible {
+    var x,y:Double
+
+    // プロトコルとプロパティの定義からDouble型と判断
+
+    var description: String {return "[\(x), \(y)]"}
+    // Double型の代わりにElementでも動作する
+    init(x: VectorDouble.Element, y:VectorDouble.Element) {
+        // 付属型を型として使うことも可能
+        self.x = x;self.y = y
+    }
+    init(vectorFloat d: VectorFloat) {
+        //プロトコルの付属型を参照するときは、型.付属型になる。プロトコル.付属型ではないので注意！
+        self.init(x: Double(d.x),y:Double(d.y))
+    }
+}
+struct VectorGrade : SimpleVector,CustomStringConvertible {
+
+    // ネスト型を定義
+    // 付属型を列挙型でその場で直接に定義
+    enum Element: String{ case A,B,C,D,X}
+
+    var x,y: Element
+    var description: String {return "[\(x),\(y)]"}
+
+}
+//実行例
+var aa = VectorFloat(x: 10.0, y: 12.9)
+let bb = VectorDouble(vectorFloat: aa)
+print(bb) // [10.0, 12.9]と表示される
+var gg = VectorGrade(x: .A, y: .C)
+print(gg) // [A,C]と表示される
+
+// SimpleVectorのプロパティx,yが、Float型、Double型、String型として使えている

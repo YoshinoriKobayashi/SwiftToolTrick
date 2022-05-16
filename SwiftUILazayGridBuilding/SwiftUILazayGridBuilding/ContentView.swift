@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
 
+    // データ
     private var symbols = ["sun.max", "moon.fill", "sparkles", "cloud", "cloud.drizzle", "cloud.fog", "cloud.snow.fill", "cloud.sun", "snowflake.circle", "tornado"]
     private var colors: [Color] = [.orange, .blue, .pink]
 
@@ -16,12 +17,15 @@ struct ContentView: View {
     //アイテムのレイアウトを設定するために使用する
     //GridItemが3つあるのは、3カラムのレイアウト
     private var gridItemLayout = [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())]
-//    private var gridItemLayout: [GridItem] =
-//    Array(repeating: .init(.flexible()), count: 3)
+
+    // Arrayで書いても同じ
+    // private var gridItemLayout: [GridItem] =
+    // Array(repeating: .init(.flexible()), count: 3)
 
     //.flexible
     //6列のグリッドを記述したい場合は、このようにGridItemの配列を作成します
 //    private var gridItemLayout: [GridItem] = Array(repeating: .init(.flexible()), count: 6)
+
     //.flexible()は、グリッドレイアウトを制御する
     //ためのサイズタイプの1つに過ぎません。
     //できるだけ多くのアイテムを一列に並べたい場合は、
@@ -31,6 +35,7 @@ struct ContentView: View {
     //アダプティブサイズタイプでは、アイテムの最小サイズを指定する必要があります。
     //下のコードでは、各グリッドのアイテムの最小サイズは 40 です
 //    private var gridItemLayout = [GridItem(.adaptive(minimum: 40))]
+
     //.adaptive(minimum: 50)を使うことで、LazyVGridは各項目の最小サイズが
     //50ポイントになるように、できるだけ多くの画像を一列に並べるよう指示。
 
@@ -38,7 +43,7 @@ struct ContentView: View {
     //固定幅のカラムを作成
     //画像を2列にレイアウトして、1列目の幅が100ポイント、
     //2列目の幅が150ポイントになるようにしたい場合
-//    private var gridItemLayout = [GridItem(.fixed(100)), GridItem(.fixed(150))]
+    // private var gridItemLayout = [GridItem(.fixed(100)), GridItem(.fixed(150))]
 
     //より複雑なレイアウト
     //固定サイズのGridItemと、それに続く適応的なサイズのGridItemの指定

@@ -149,3 +149,78 @@ var gg = VectorGrade(x: .A, y: .C)
 print(gg) // [A,C]と表示される
 
 // SimpleVectorのプロパティx,yが、Float型、Double型、String型として使えている
+
+// List5-10 プロコトルでSelfを利用する
+protocol TransVector {
+    associatedtype Element   // 付属型の宣言
+    var x: Element{ get }
+    var y: Element{ get }
+    func transposed() -> Self  // 自分と同じ型を返す関数
+    static func +(lhs: Self, rhs: Self) -> Self  // 同じ型同士の演算
+    // Self（Sが大文字は同じデータ型をしめす）
+}
+
+struct VectorInt: TransVector, CustomStringConvertible {
+    typealias Element = Int  // 付属型にInrtを設定
+    let x,y: Int
+    func transposed() -> VectorInt {
+        return VectorInt(x: self.y, y: self.y)
+    }
+    static func +(lhs: VectorInt, rhs: VectorInt) -> VectorInt {
+        return VectorInt(x: lhs.x + rhs.x, y: lhs.y + rhs.y)
+    }
+    var description: String { return "[\(x), \(y)]"}
+}
+
+// List5-11
+// Equatableを継承したプロトコル
+protocol EqVector: Equatable {
+    // 付属型に適合するプロトコルを指定
+    associatedtype Element: Equatable
+
+    var x: Element {get set}
+    var y: Element {get set}
+
+}
+
+// List5-13 プロコトルEqVectorを採用するLabeledPointとShopOnMapの定義
+// EqVectorを採用するとEquatableも採用
+struct LabeldPoint : EqVector, CustomStringConvertible {
+    var label: String
+    // IntはEqutableに適合
+    var x, y: Int
+    var description: String{ return "[\(x), \(y)]"}
+    // Equatableには自動的に適合しているので、演算子==は必要ない
+}
+struct ShopOnMap: EqVector, CustomStringConvertible {
+    // 定義にタプルがある
+    var shop: (name: String, comment: String?)
+    // FloatはEqutableに適合
+    var x,y :Float
+    init(_ s: String,N: Float, E: Float,comment: String? = nil) {
+        shop = (name:s, comment:comment)
+        x = E;y = N //　東経と北緯
+    }
+    var description: String {
+        var r = shop.name + "(N\(y), E\(x))"
+        if let msg = shop.comment { r += " " + msg }
+        return r
+    }
+    // Equatableに適合するために必要
+    // タプルはEquatableに適合できないので、==を定義する
+    static func ==(lhs: ShopOnMap, rhs: ShopOnMap) -> Bool {
+        // shop以外のx,yプロパティについてのみ==を定義しているのがポイント
+        return lhs.x == rhs.x && lhs.y == rhs.y
+    }
+}
+// Vector.ElementはInt型
+let mx: VectorInt.Element = 10
+let a2 = LabeldPoint(label: "A", x: mx, y: 7)
+var b2 = LabeldPoint(label: "B", x: 10, y: mx-3)
+print(a2 != b2) // trueを表示
+b2.label = "A"  // labelを変更
+print(a2 == b2) // trueを表示
+let shop01 = ShopOnMap("たまや",N:35.030,E:135.769, comment: "美味")
+let shop02 = ShopOnMap("餅屋",N:35.030,E:135.769)
+print(shop01 == shop02)
+print(shop01)

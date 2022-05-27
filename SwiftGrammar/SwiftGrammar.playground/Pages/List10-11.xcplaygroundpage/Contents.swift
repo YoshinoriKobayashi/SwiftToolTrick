@@ -35,4 +35,3 @@ print(f.abs())
 let p  = 将棋(x:"4", y:"六")
 print(p.toString())
 
-SetAlgebra

@@ -26,19 +26,3 @@ do {
 let fr2 = Friend(name:"久我山")
 clo2(fr2)                        // 久我山さん、こんにちは。烏丸です。と表示
 clo2 = fr2.sayHello              // "deini 烏丸"と表示
-
-// 列挙型のインスタンス生成もクロージャとして扱える
-enum Avater {
-    case player(String)
-    case creature(String)
-}
-let clo: (String) -> Avatar = Avatar.player
-let pl = clo("アドバーグ")  // Avatar型のインスタンスを生成
-
-
-6/12（日）14:00〜18:00
-6/13（月）19:00〜20:00
-6/16（木）19:00〜20:00
-6/17（金）16:00〜20:00
-6/18（土）16:00〜20:00
-

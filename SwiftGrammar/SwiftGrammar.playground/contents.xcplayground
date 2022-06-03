@@ -4,6 +4,7 @@
         <page name='Untitled Page'/>
         <page name='5.プロコトル'/>
         <page name='List5-16'/>
+        <page name='List9-2'/>
         <page name='List10-1'/>
         <page name='List10-2'/>
         <page name='List10-3'/>
@@ -14,5 +15,10 @@
         <page name='List12-3'/>
         <page name='List12-4'/>
         <page name='List12-6'/>
+        <page name='List12-7'/>
+        <page name='List12-8'/>
+        <page name='List12-10'/>
+        <page name='List12-18'/>
+        <page name='List13-1'/>
     </pages>
 </playground>

@@ -7,6 +7,7 @@ import Darwin
 
 // プロトコルの拡張定義（extention）には、型パラメータによる制約をつけることができる
 
+// 含まれつ要素の型をT
 struct PickForever<T> {    // 要素を繰り返し取り出し続ける
     var list: [T]
     private var index = 0
@@ -21,10 +22,12 @@ struct PickForever<T> {    // 要素を繰り返し取り出し続ける
     }
 }
 
+// 拡張定義に型の制約に基づいて、記述をグループ化
 extension PickForever where T : Comparable {    // 大小比較できる
     mutating func sort() { list.sort() }      // 昇順にソートする
 }
 
+// hashableプロコトルに適合していえるとSetの機能を使って拘束に要素の検索が可能
 extension PickForever where T : Hashable {      // ハッシュ値が使える
     mutating func makeUnique() {
         let tmp = Set<T>(list)                  // 集合にして重複要素を削除する
@@ -32,9 +35,35 @@ extension PickForever where T : Hashable {      // ハッシュ値が使える
     }
 }
 
+// List13-13 拡張定義の制約として型がお暗示であることを指定
+// 型パラメータTがString型のときだけ使用できる拡張定義
+extension PickForever where T == String {
+    mutating func concatenate(_ n: Int) -> String {
+        guard list.count > 0, n > 0 else { return "" }
+        var buf = self.pick()
+        for _ in 1 ..< n { buf += ":" + self.pick() }
+        return buf
+    }
+}
+
+// (4, "多摩")はタプル
 let t = [(4, "多摩"),(2, "阿波"),(1, "薩摩")]
+// 変数aには、sort()やmakeUnique()は実行できない
 var a = PickForever<(Int,String)>(t)
 for _ in 0..<5 {
     print(a.pick().1, terminator: " ")
 }
 print()
+
+// ここでは拡張定義の２つが両方つける
+// 文字列型が、ComparableとHashableをもっているから
+var b = PickForever("こさかかいがげあｇじぇあ")
+b.makeUnique()
+b.sort()
+for _ in 0 ..< 10 { print(b.pick(), terminator: " ")}
+print()
+
+var c = PickForever(["初雪","吹雪","白雪","深雪"])
+print(c.concatenate(2))
+print(c.concatenate(7))
+

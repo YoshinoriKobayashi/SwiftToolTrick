@@ -65,3 +65,13 @@ var g3 = g2.copy()
 print(g3)  // ViewPoint: 松本城、N36.238064、E137.968457
 print(g2 === g3) // false を表示（違ういオブジェクトであることがわる）
 
+// 型パラメータをもつtypealias
+//typealias Array<T,U> = ([T],[U])
+//let wicca: Array<Int,String> = ([1107,5210],["塔","工房"])
+
+//typealias SortableArray<T:Comparable> = Array<T>
+//let ta: SortableArray = [0.138, 1.09, 0.0, -1.1304]
+//let sa: SortableArray = ["palm","top","tiger"]
+
+
+

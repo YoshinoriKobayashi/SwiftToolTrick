@@ -29,5 +29,6 @@
         <page name='List13-15'/>
         <page name='List13-16'/>
         <page name='List_filter'/>
+        <page name='List_map'/>
     </pages>
 </playground>

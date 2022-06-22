@@ -14,6 +14,9 @@
 		FA8B1A4728613802004E3416 /* GaugeSample.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8B1A4628613802004E3416 /* GaugeSample.swift */; };
 		FA8B1A4928613B8E004E3416 /* MultiDatePickerSample.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8B1A4828613B8E004E3416 /* MultiDatePickerSample.swift */; };
 		FA8B1A4B28614689004E3416 /* TableMultiColumnsSample.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8B1A4A28614689004E3416 /* TableMultiColumnsSample.swift */; };
+		FAF3CBF428627AED001B73DA /* GridSample.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF3CBF328627AED001B73DA /* GridSample.swift */; };
+		FAF3CBF628628BFD001B73DA /* PasteButtonSample.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF3CBF528628BFD001B73DA /* PasteButtonSample.swift */; };
+		FAF3CBFA28629192001B73DA /* NavigationStackSample.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF3CBF928629192001B73DA /* NavigationStackSample.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +28,9 @@
 		FA8B1A4628613802004E3416 /* GaugeSample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GaugeSample.swift; sourceTree = "<group>"; };
 		FA8B1A4828613B8E004E3416 /* MultiDatePickerSample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiDatePickerSample.swift; sourceTree = "<group>"; };
 		FA8B1A4A28614689004E3416 /* TableMultiColumnsSample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableMultiColumnsSample.swift; sourceTree = "<group>"; };
+		FAF3CBF328627AED001B73DA /* GridSample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridSample.swift; sourceTree = "<group>"; };
+		FAF3CBF528628BFD001B73DA /* PasteButtonSample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasteButtonSample.swift; sourceTree = "<group>"; };
+		FAF3CBF928629192001B73DA /* NavigationStackSample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationStackSample.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +68,9 @@
 				FA8B1A4628613802004E3416 /* GaugeSample.swift */,
 				FA8B1A4828613B8E004E3416 /* MultiDatePickerSample.swift */,
 				FA8B1A4A28614689004E3416 /* TableMultiColumnsSample.swift */,
+				FAF3CBF328627AED001B73DA /* GridSample.swift */,
+				FAF3CBF528628BFD001B73DA /* PasteButtonSample.swift */,
+				FAF3CBF928629192001B73DA /* NavigationStackSample.swift */,
 				FA8B1A3C286136E6004E3416 /* Assets.xcassets */,
 				FA8B1A3E286136E6004E3416 /* Preview Content */,
 			);
@@ -147,9 +156,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA8B1A3B286136E5004E3416 /* ContentView.swift in Sources */,
+				FAF3CBF628628BFD001B73DA /* PasteButtonSample.swift in Sources */,
 				FA8B1A39286136E5004E3416 /* SwiftUIWWDC2022App.swift in Sources */,
 				FA8B1A4728613802004E3416 /* GaugeSample.swift in Sources */,
+				FAF3CBF428627AED001B73DA /* GridSample.swift in Sources */,
 				FA8B1A4B28614689004E3416 /* TableMultiColumnsSample.swift in Sources */,
+				FAF3CBFA28629192001B73DA /* NavigationStackSample.swift in Sources */,
 				FA8B1A4928613B8E004E3416 /* MultiDatePickerSample.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -1,3 +1,5 @@
+# 学習用にコメントアップ、動作検証
+
 ## [Point-Free](https://www.pointfree.co)
 
 > #### This directory contains code from Point-Free Episode: [A Tour of the Composable Architecture: Part 1](https://www.pointfree.co/episodes/ep100-a-tour-of-the-composable-architecture-part-1)

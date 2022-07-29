@@ -11,6 +11,7 @@ private let readMe = """
 
 // この画面のStateは、以下のような値を保持しています。
 struct BindingFormState: Equatable {
+    // 
   @BindableState var sliderValue = 5.0
   @BindableState var stepCount = 10
   @BindableState var text = ""

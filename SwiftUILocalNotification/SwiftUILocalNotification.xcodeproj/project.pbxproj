@@ -11,6 +11,8 @@
 		FE21112228C1C2E300D3F250 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE21112128C1C2E300D3F250 /* ContentView.swift */; };
 		FE21112428C1C2E400D3F250 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE21112328C1C2E400D3F250 /* Assets.xcassets */; };
 		FE21112728C1C2E400D3F250 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE21112628C1C2E400D3F250 /* Preview Assets.xcassets */; };
+		FE21112E28C1C36700D3F250 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE21112D28C1C36700D3F250 /* NotificationManager.swift */; };
+		FE21113028C1C5B900D3F250 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE21112F28C1C5B900D3F250 /* AppDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,9 @@
 		FE21112128C1C2E300D3F250 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		FE21112328C1C2E400D3F250 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FE21112628C1C2E400D3F250 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		FE21112D28C1C36700D3F250 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
+		FE21112F28C1C5B900D3F250 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FE21113128C1C86200D3F250 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +40,7 @@
 		FE21111328C1C2E300D3F250 = {
 			isa = PBXGroup;
 			children = (
+				FE21113128C1C86200D3F250 /* README.md */,
 				FE21111E28C1C2E300D3F250 /* SwiftUILocalNotification */,
 				FE21111D28C1C2E300D3F250 /* Products */,
 			);
@@ -53,6 +59,8 @@
 			children = (
 				FE21111F28C1C2E300D3F250 /* SwiftUILocalNotificationApp.swift */,
 				FE21112128C1C2E300D3F250 /* ContentView.swift */,
+				FE21112D28C1C36700D3F250 /* NotificationManager.swift */,
+				FE21112F28C1C5B900D3F250 /* AppDelegate.swift */,
 				FE21112328C1C2E400D3F250 /* Assets.xcassets */,
 				FE21112528C1C2E400D3F250 /* Preview Content */,
 			);
@@ -137,6 +145,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE21113028C1C5B900D3F250 /* AppDelegate.swift in Sources */,
+				FE21112E28C1C36700D3F250 /* NotificationManager.swift in Sources */,
 				FE21112228C1C2E300D3F250 /* ContentView.swift in Sources */,
 				FE21112028C1C2E300D3F250 /* SwiftUILocalNotificationApp.swift in Sources */,
 			);
@@ -267,6 +277,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftUILocalNotification/Preview Content\"";
+				DEVELOPMENT_TEAM = 69U32QXGLT;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -295,6 +306,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftUILocalNotification/Preview Content\"";
+				DEVELOPMENT_TEAM = 69U32QXGLT;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

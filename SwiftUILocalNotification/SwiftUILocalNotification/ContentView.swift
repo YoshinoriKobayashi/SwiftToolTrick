@@ -9,8 +9,12 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, world!")
+        Text("Local Notification Demo")
             .padding()
+        // NotificationManagerのsendNotification()メソッドを呼び出すようにアクションを設定
+        Button(action: { NotificationManager.instance.sendNotification() }) { 
+            Text("Send Notification!!")
+        }
     }
 }
 

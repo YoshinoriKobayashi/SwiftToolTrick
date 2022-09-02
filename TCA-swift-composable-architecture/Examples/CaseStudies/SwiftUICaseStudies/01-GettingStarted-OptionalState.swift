@@ -61,7 +61,7 @@ struct OptionalBasicsView: View {
                 Button("Toggle counter state") {
                     viewStore.send(.toggleCounterButtonTapped)
                 }
-                
+                // Storeのnilを判断
                 IfLetStore(
                     self.store.scope(
                         state: \.optionalCounter,

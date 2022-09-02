@@ -2,16 +2,12 @@ import ComposableArchitecture
 import SwiftUI
 
 private let readMe = """
-  This screen demonstrates how multiple independent screens can share state in the Composable \
-  Architecture. Each tab manages its own state, and could be in separate modules, but changes in \
-  one tab are immediately reflected in the other.
+    この画面は、コンポーザブル・アーキテクチャにおいて、複数の独立した画面がどのように状態を共有できるかを示すものである。各タブはそれ自身の状態を管理し、別々のモジュールになることができますが、1つのタブでの変更は他のタブに即座に反映されます。
 
-  This tab has its own state, consisting of a count value that can be incremented and decremented, \
-  as well as an alert value that is set when asking if the current count is prime.
+  このタブは独自の状態を持ち、カウント値を増減させることができるほか、現在のカウントがプライムであるかどうかを尋ねる際に設定されるアラート値で構成されています。
 
-  Internally, it is also keeping track of various stats, such as min and max counts and total \
-  number of count events that occurred. Those states are viewable in the other tab, and the stats \
-  can be reset from the other tab.
+  内部では、最小・最大カウントや発生したカウントイベントの総数など、さまざまな統計情報を記録している。それらの状態は、他のタブで見ることができ、統計情報は他のタブからリセットすることができます。
+
   """
 
 struct SharedState: Equatable {
@@ -28,9 +24,7 @@ struct SharedState: Equatable {
     var numberOfCounts = 0
   }
 
-  // The ProfileState can be derived from the CounterState by getting and setting the parts it cares
-  // about. This allows the profile feature to operate on a subset of app state instead of the whole
-  // thing.
+  // ProfileStateは、気になる部分を取得・設定することで、CounterStateから派生させることができます。これにより、プロファイル機能は、全体ではなく、アプリの状態のサブセットで動作するようになります。
   var profile: ProfileState {
     get {
       ProfileState(
@@ -156,7 +150,7 @@ struct SharedStateView: View {
       VStack {
         Picker(
           "Tab",
-          selection: viewStore.binding(send: SharedStateAction.selectTab)
+          selection: viewStore.binding(send: SharedStateAction.selectTab) // 
         ) {
           Text("Counter")
             .tag(SharedState.Tab.counter)
@@ -227,12 +221,9 @@ struct SharedStateProfileView: View {
       VStack(spacing: 64) {
         Text(
           template: """
-            This tab shows state from the previous tab, and it is capable of reseting all of the \
-            state back to 0.
+            このタブは、前のタブからのStateを表示し、すべてをStateを0に戻すことが可能です。
 
-            This shows that it is possible for each screen to model its state in the way that makes \
-            the most sense for it, while still allowing the state and mutations to be shared \
-            across independent screens.
+            これは、各画面がそのstateを最も意味のある方法でモデル化し、かつ独立した画面間で状態や変異を共有することが可能であることを示しています。
             """,
           .caption
         )

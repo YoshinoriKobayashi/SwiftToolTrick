@@ -12,7 +12,7 @@ import SwiftUI
 import CoreData
 
 
-struct ContentView: View {
+struct ContentView: UIViewRepresentable {
     /// 被管理オブジェクトコンテキスト（ManagedObjectContext）の取得
     @Environment(\.managedObjectContext) private var context
     

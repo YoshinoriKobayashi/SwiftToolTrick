@@ -37,8 +37,7 @@ struct NavigationViewToolBar: View {
         
         // ツールバーだけど、bttomの色しか変化しない？？
         UIToolbar.appearance().barTintColor = UIColor.red
-        
-
+    
     }
     var body: some View {
         NavigationView {
@@ -48,10 +47,18 @@ struct NavigationViewToolBar: View {
                         Text("\(index)行目")
                 }
             }
-            .navigationTitle("ナビゲーションタイトル")
+            // Titleの表示位置
+            // inline:ナビゲーション バーの標準境界内にタイトルを表示します。
             .navigationBarTitleDisplayMode(.inline)
 
             .toolbar {
+                // ナビゲーションのタイトルはtoolbarの中で設定する。
+                ToolbarItem(placement: .principal) {
+                    Text("ナビゲーションタイトル")
+                        .foregroundColor(Color.white)
+                        .fontWeight(.bold)
+                        .font(.custom("HiraginoSans-W6", size: 18.0))
+                }
                 // placementで場所を指定
                 /// ナビゲーション左
                 ToolbarItem(placement: .navigationBarLeading) {
@@ -86,7 +93,6 @@ struct NavigationViewToolBar: View {
             }
         }
         .accentColor(.white) // iOS14から対応している。
-        // https://stackoverflow.com/questions/64467504/how-to-change-color-of-toolbaritem-with-navigationbarleading-placement-in-swiftu
     }
 }
 

@@ -23,8 +23,7 @@ struct NavigationViewToolBar: View {
             UINavigationBar.appearance().scrollEdgeAppearance = appearance
             //ナビゲーションアイテムの色を変更
             UINavigationBar.appearance().tintColor = UIColor.white
-
-
+            
         } else {
             // iOS14以前
             //ナビゲーションバーの背景を変更
@@ -35,6 +34,10 @@ struct NavigationViewToolBar: View {
             // UINavigationBar.appearance().tintColor = UIColor.white
                     
         }
+        
+        // ツールバーだけど、bttomの色しか変化しない？？
+        UIToolbar.appearance().barTintColor = UIColor.red
+        
 
     }
     var body: some View {

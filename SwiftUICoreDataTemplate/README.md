@@ -1,0 +1,3 @@
+#  SwiftUIのCoreDataテンプレートを読みとく
+
+

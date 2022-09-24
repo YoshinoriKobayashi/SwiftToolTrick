@@ -23,6 +23,7 @@
 		FE694A9928DFBE4A003061D0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		FE694A9B28DFBE4A003061D0 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		FE694A9E28DFBE4A003061D0 /* SwiftUICoreDataTemplate.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SwiftUICoreDataTemplate.xcdatamodel; sourceTree = "<group>"; };
+		FE694AA528DFBEEC003061D0 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +40,7 @@
 		FE694A8628DFBE4A003061D0 = {
 			isa = PBXGroup;
 			children = (
+				FE694AA528DFBEEC003061D0 /* README.md */,
 				FE694A9128DFBE4A003061D0 /* SwiftUICoreDataTemplate */,
 				FE694A9028DFBE4A003061D0 /* Products */,
 			);

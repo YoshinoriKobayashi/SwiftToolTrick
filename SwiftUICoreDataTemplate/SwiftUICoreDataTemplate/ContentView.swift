@@ -9,11 +9,15 @@ import SwiftUI
 import CoreData
 
 struct ContentView: View {
+    // 環境変数の取得
     @Environment(\.managedObjectContext) private var viewContext
 
+    // 時間でソートして読み込み
+    // NSSortDescriptorがソート指定
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
         animation: .default)
+    // 読み込んだデータをitemsとして利用
     private var items: FetchedResults<Item>
 
     var body: some View {
@@ -42,6 +46,7 @@ struct ContentView: View {
         }
     }
 
+    // データ追加
     private func addItem() {
         withAnimation {
             let newItem = Item(context: viewContext)
@@ -57,7 +62,8 @@ struct ContentView: View {
             }
         }
     }
-
+    
+    // データ削除
     private func deleteItems(offsets: IndexSet) {
         withAnimation {
             offsets.map { items[$0] }.forEach(viewContext.delete)
@@ -83,6 +89,7 @@ private let itemFormatter: DateFormatter = {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
+        // プレビューで使うときは、previewプロパティを指定することで、テストデータに切り替わる
         ContentView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }

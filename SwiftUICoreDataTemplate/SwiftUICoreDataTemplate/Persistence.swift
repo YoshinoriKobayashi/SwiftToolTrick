@@ -54,6 +54,7 @@ struct PersistenceController {
         // NSPersistentContainer：アプリ内のCore Dataスタックをカプセル化するコンテナです。
         // name:指定された名前のコンテナを作成する。このコンテナとCoreDataのエーブル名が一致している。
         // CoreDataのテーブル全体を管理するイメージ。
+        // .xcdatamodeldが複数ある場合は、ここでインスタンス化するcontainerも複数が必要。
         container = NSPersistentContainer(name: "SwiftUICoreDataTemplate")
         //
         if inMemory {

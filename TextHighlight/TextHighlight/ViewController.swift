@@ -5,80 +5,107 @@
 //  Created by Yoshinori Kobayashi on 2022/10/27.
 //
 
-#if os(iOS)
 import UIKit
-#else
-import Cocoa
-#endif
-import CoreGraphics
 
-class ViewController : UIViewController , NSTextLayoutManagerDelegate{
+class ViewController : UIViewController{
 
     @IBOutlet weak var textLabel: UILabel!
-    @IBOutlet weak var textView: UITextView!
+    @IBOutlet weak var textView: UITextView! 
+
+    private var textContentStorage: NSTextContentStorage
+    private var textLayoutManager: NSTextLayoutManager
+    private var fragmentForCurrentComment: NSTextLayoutFragment?
     
+    required init?(coder: NSCoder) {
+        
+        textLayoutManager = NSTextLayoutManager()
+        textContentStorage = NSTextContentStorage()
+        super.init(coder: coder)
+
+        textContentStorage.delegate = self
+        textContentStorage.addTextLayoutManager(textLayoutManager)
+        let textContainer = NSTextContainer(size: CGSize(width: 200, height: 0))
+        textLayoutManager.textContainer = textContainer
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         // 複数行の表示
         textLabel.numberOfLines = 0
         textLabel.lineBreakMode = .byClipping
         
-        textLabel.text = "Mind can be observed and known. But you can know directly only your own mind, and not another's."
+         let text = "Mind can be observed and known. But you can know directly only your own mind, and not another's."
         
-        textView.text = "Mind can be observed and known. But you can know directly only your own mind, and not another's."
-
+        let attributedText = NSMutableAttributedString(string:  text )
+        attributedText.addAttributes([.backgroundColor: UIColor.cyan], range: NSRange(location: 12, length: 8))
+        
 //        
-//        // フォントの指定
-//        guard let originalFont = UIFont(name:"Comic Sans MS", size: 24.0) else { return }
-//        // 太字の属性を作成
-//        let boldFontDescriptor = originalFont.fontDescriptor.withSymbolicTraits(.traitBold)
-//        // 
-//        let boldFont = UIFont(descriptor: boldFontDescriptor!, size: (originalFont.pointSize))
-        
-        //
-        // let newText = NSMutableAttributedString(attributedString: textLabel.attributedText!)
-//        let newText = NSMutableAttributedString(string: textLabel.text!,attributes: [.font: originalFont])
-        let newText = NSMutableAttributedString(string: textLabel.text!)
-        //
-//        newText.addAttribute(.font, value: boldFont, range: NSRange(location: 0, length: 4))
-        
-        // フォントの指定
-        newText.addAttribute(.font, value: UIFont(name: "PartyLetPlain", size: 24)!,  range: NSRange(0...3))
-        
-        // 背景の指定
-        newText.addAttribute(.backgroundColor, value: UIColor.green,  range: NSRange(12...19))
-        
-        // 角丸
-        // addAttributesは属性値をkeyで指定できる。addAttributeとは違うので注意！
-        // https://developer.apple.com/documentation/foundation/nsmutableattributedstring/1414304-addattributes
-        newText.addAttributes(
-            [
-                .underlineStyle: NSUnderlineStyle.single.rawValue,
-                .underlineColor: UIColor.red
-            ],
-            range: NSRange(25...29)
-        )
+//        let layoutManager = LayoutManager()
+//        layoutManager.backgroundCornerRadius = 5
+//        
+//        // iOS15でTextKit2が導入されたので、この方法では動かない。
+//        textView.textContainer.replaceLayoutManager(layoutManager)
+        textLabel.attributedText = attributedText
+        textView.attributedText = attributedText
+    }
+}
+//class LayoutManager: NSLayoutManager {
+//
+//    var backgroundCornerRadius: CGFloat = 0
+//
+//    override func fillBackgroundRectArray(_ rectArray: UnsafePointer<CGRect>, count rectCount: Int, forCharacterRange charRange: NSRange, color: UIColor) {
+//        guard let context = UIGraphicsGetCurrentContext() else {
+//            super.fillBackgroundRectArray(rectArray, count: rectCount, forCharacterRange: charRange, color: color)
+//            return
+//        }
+//        context.saveGState()
+//        defer { context.restoreGState() }
+//        context.setFillColor(color.cgColor)
+//
+//        for rectIndex in 0..<rectCount {
+//            let rect = rectArray.advanced(by: rectIndex).pointee
+//            let path = UIBezierPath(roundedRect: rect, cornerRadius: backgroundCornerRadius)
+//            context.addPath(path.cgPath)
+//            context.fillPath()
+//        }
+//    }
+//}
 
-        // iOS15でTextKit2が導入されたので、この方法では動かない。
-        textView.textContainer.replaceLayoutManager(CustomLayoutManager())
-        textLabel.attributedText = newText
-        textView.attributedText = newText
-     }
+extension ViewController: NSTextContentManagerDelegate,
+                          NSTextContentStorageDelegate {
     
-    var textContentStorage: NSTextContentStorage!
     
-    // MARK: - NSTextContentManagerDelegate
     
+}
 
+
+extension ViewController: NSTextLayoutManagerDelegate {
+    
     
     // MARK: - NSTextLayoutManagerDelegate
+    // NSTextLayoutFragmentの管理
+    // textElement 内の位置に対する NSTextLayoutFragment を返します。NSTextLayoutManagerDelegate は、レンダリングサーフェスの対象となる NSTextElement サブクラスに特化した NSTextLayoutFragment を提供することができます。
+    // NSTextLayoutManager は、NSTextContentManager の持つ NSTextElement をNSTextLayoutFragment に変換していきます。
     func textLayoutManager(_ textLayoutManager: NSTextLayoutManager,
                            textLayoutFragmentFor location: NSTextLocation,
                            in textElement: NSTextElement) -> NSTextLayoutFragment {
+        
+        // NSTextLayoutManagerは、TextKitオブジェクトネットワークの中心的存在で、
+        // NSTextContainerの配列を介してレイアウト形状を維持し、
+        // オーナーNSTextContentManagerから渡された
+        // NSTextElementに関連するNSTextLayoutFragmentでレイアウト結果を維持します。
+        // offset：fromとtoの間のオフセットを返す。
+        // 戻り値は正または負である。オフセットが整数値で表現できない場合（つまり、場所が同じドキュメント内にない場合）、NSNotFound を返す可能性があります。
+        // 戻り値はInt型
         let index = textLayoutManager.offset(from: textLayoutManager.documentRange.location, to: location)
-        let commentDepthValue = textContentStorage!.textStorage!.attribute(.commentDepth, at: index, effectiveRange: nil) as! NSNumber?
+        // attribute(_:at:effectiveRange:)
+        // 指定されたインデックスにある文字の指定された名前の属性に対応する値を返し、
+        // 参照として、その属性が適用される範囲を返す。
+        let commentDepthValue = textContentStorage.textStorage!.attribute(.commentDepth, at: index, effectiveRange: nil) as! NSNumber?
         if commentDepthValue != nil {
+            // textElementは、NSTextElement型→ここでテキスト属性
+            // textElement.elementRangeは、NSTextRange型→ココで範囲
             let layoutFragment = BubbleLayoutFragment(textElement: textElement, range: textElement.elementRange)
             layoutFragment.commentDepth = commentDepthValue!.uintValue
             return layoutFragment
@@ -86,95 +113,7 @@ class ViewController : UIViewController , NSTextLayoutManagerDelegate{
             return NSTextLayoutFragment(textElement: textElement, range: textElement.elementRange)
         }
     }
-    
 }
-
-
-List {
-      Text("Protty")
-        .frame(height: 100)
-        .listRowInsets(.init())
-        .listRowSeparator(.hidden)
-        .background(Color.red)
-      if let functions = model.functions {
-        ForEach(functions, id: \.self) { function in
-          Section(header: sectionHeader(function: function, gp: gp)) {
-            if let phrases = function.key_phrases {
-              ForEach(phrases, id: \.self) {
-                keyPhraseView(phrase: $0)
-                if $0 != phrases.last { UIColor.edGreyLight.swiftUI.frame(height: 1) }
-              }
-              .listRowInsets(.init())
-              .listRowSeparator(.hidden)
-            }
-          }
-        }
-      }
-    }
-    .listStyle(.plain)
-    .environment(\.defaultMinListRowHeight, 0)
-    .environment(\.defaultMinListHeaderHeight, 0)
-
-
-
-
-
-
-
-
-
-
-
-
-
-class  CustomLayoutManager: NSLayoutManager {
-    
-    // 指定された範囲のグリフにアンダーラインを描きます。
-    // https://developer.apple.com/documentation/uikit/nslayoutmanager/1403079-drawunderline
-    override func drawUnderline(forGlyphRange glyphRange: NSRange, underlineType underlineVal: NSUnderlineStyle, baselineOffset: CGFloat, lineFragmentRect lineRect: CGRect, lineFragmentGlyphRange lineGlyphRange: NSRange, containerOrigin: CGPoint) {
-        
-        // glyphRange：
-        // グリフの範囲。これは 1 つの線分矩形に属するものでなければなりません（ lineFragmentRect(forGlyphAt:effectiveRange:) が返すように）。
-        // underlineVal:
-        // 描画する下線のスタイル。この値は underlineStyle の値から派生したマスクで、例えば (NSUnderlinePatternDash | NSUnderlineStyleThick) となります。サブクラスは、カスタム下線スタイルを定義することができる。
-        // baselineOffset：
-        // 指定された範囲のグリフのバウンディングボックスの底辺からベースラインまでの距離を指定する。
-        // lineRect：
-        // 下線を引くグリフを含む線分矩形。
-        // lineGlyphRange：
-        // lineRect 内のすべてのグリフの範囲。
-        // containerOrigin:
-        // lineRectNSTextContainerのNSTextViewにおける原点。
-            
-        let firstPosition = location(forGlyphAt: glyphRange.location).x
-        let lastPosition: CGFloat
-        
-        if NSMaxRange(glyphRange) < NSMaxRange(lineGlyphRange)  {
-            lastPosition = location(forGlyphAt: NSMaxRange(glyphRange)).x
-        } else {
-            lastPosition = lineFragmentUsedRect(forGlyphAt: NSMaxRange(glyphRange) - 1, effectiveRange: nil).size.width
-        }
-        
-        var lineRect = lineRect
-        let height = lineRect.size.height * 3.5 / 4.0 // replace your under line height
-        lineRect.origin.x += firstPosition
-        lineRect.size.width = lastPosition - firstPosition
-        lineRect.size.height = height
-        
-        lineRect.origin.x += containerOrigin.x
-        lineRect.origin.y += containerOrigin.y
-        
-        lineRect = lineRect.integral.insetBy(dx: 0.5, dy: 0.5)
-        
-//        let path = UIBezierPath(rect: lineRect)
-         let path = UIBezierPath(roundedRect: lineRect, cornerRadius: 3)
-        // set your cornerRadius
-        path.fill()
-    }
-    
-    
-}
-
 
 
 class BubbleLayoutFragment: NSTextLayoutFragment {
@@ -184,6 +123,10 @@ class BubbleLayoutFragment: NSTextLayoutFragment {
     override var trailingPadding: CGFloat { return 50 }
     override var topMargin: CGFloat { return 6 }
     override var bottomMargin: CGFloat { return 6 }
+    
+    // NSTextLayoutFragmentのinitが有効になっている
+    // public init(textElement: NSTextElement, range rangeInElement: NSTextRange?)
+
     
     private var tightTextBounds: CGRect {
         var fragmentTextBounds = CGRect.null
@@ -226,5 +169,12 @@ class BubbleLayoutFragment: NSTextLayoutFragment {
         
         // Draw the text on top.
         super.draw(at: renderingOrigin, in: ctx)
+    }
+}
+
+extension NSAttributedString.Key {
+    public static var commentDepth: NSAttributedString.Key {
+        // NSAttributedString.Key：属性付き文字列のテキストに適用できる属性です。
+        return NSAttributedString.Key("TK2DemoCommentDepth")
     }
 }

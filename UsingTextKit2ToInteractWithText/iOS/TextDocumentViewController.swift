@@ -7,6 +7,7 @@ The application's primary view controller.
 
 import UIKit
 
+// ここでは1画面なのでViewControllerにしている
 class TextDocumentViewController: UIViewController,
                                   NSTextContentManagerDelegate,
                                   NSTextContentStorageDelegate,
@@ -31,9 +32,16 @@ class TextDocumentViewController: UIViewController,
         textContentStorage = NSTextContentStorage()
         super.init(coder: coder)
         textContentStorage.delegate = self
+        // 提供されたレイアウトマネージャーをレイアウトマネージャーのリストに追加します。
         textContentStorage.addTextLayoutManager(textLayoutManager)
-        
+        // テキストレイアウトが行われる領域。
+        // NSLayoutManager は NSTextContainer を使って、どこで改行するか、
+        // テキストの一部をレイアウトするか、などを決定します。
+        // NSTextContainer、NSLayoutManager、NSTextStorage クラスのインスタンスは、
+        // アプリが一度に1つのスレッドからのアクセスを保証する限り、メインスレッド以外からアクセスすることが可能です。
         let textContainer = NSTextContainer(size: CGSize(width: 200, height: 0))
+        // レイアウト先の幾何情報を提供するテキストコンテナオブジェクト。
+        // isSimpleRectangularTextContainer=NOの場合、NSTextLayoutManagerは非連続レイアウトサポートを許可せず、常に上部から塗りつぶします。
         textLayoutManager.textContainer = textContainer
     }
     
@@ -42,6 +50,7 @@ class TextDocumentViewController: UIViewController,
         
         if let docURL = Bundle.main.url(forResource: "menu", withExtension: "rtf") {
             do {
+                // ここでコンテンツをセット。
                 try textContentStorage.textStorage?.read(from: docURL, documentAttributes: nil)
             } catch {
                 // Could not read menu content.
@@ -53,6 +62,9 @@ class TextDocumentViewController: UIViewController,
             button.configuration?.image =
                 button.isSelected ? UIImage(systemName: "text.bubble.fill") : UIImage(systemName: "text.bubble")
             self.showComments = button.isSelected
+            // setNeedsLayout
+            // frame更新要否のフラグを立てる 
+            // 計算実行タイミングはシステム任せ
             textDocumentView.layer.setNeedsLayout()
         }
         toggleComments.configurationUpdateHandler = toggleUpdateHandler
@@ -89,6 +101,7 @@ class TextDocumentViewController: UIViewController,
         // NSTextElement：この要素がドキュメントを構成する。
         // テキストコンテンツマネージャはこのメソッドを呼び出して、各テキスト要素をレイアウトのために列挙すべきかどうかを判断する。
         // コメントを非表示にするには、テキストコンテンツマネージャーに、この要素がコメントである場合は列挙しないように指示します。
+        // コメントが非表示のとき
         if !showComments {
             if let paragraph = textElement as? NSTextParagraph {
                 let commentDepthValue = paragraph.attributedString.attribute(.commentDepth, at: 0, effectiveRange: nil)
@@ -104,6 +117,12 @@ class TextDocumentViewController: UIViewController,
     // NSTextContentStorageの正体は、NSTextContentManagerのデフォルト値。
     // NSTextParagraphは、デフォルトのエレメントタイプ（element type）
     // NSTextContentStorageは、テキストストレージ内のテキストが変更した時、更新された段落の要素を生成します。
+    // textStorage の range で指定される部分について、どのような NSTextParagraph を作るかをカスタマイズするための delegate メソッドです。
+    // 文字列はすでに Paragraph に該当する部分に分割されていますので、分割具合を変更することはできません。
+    // なお この delegate は変更された部分についてのみ呼び出されます。
+    // この delegate を設定しない、もしくは、このメソッドで nil を返すと、NSTextContentManager 側で NSTextParagraph を作成してくれます。
+    // ですので、独自の NSTextParagraph を作りたい時には、この メソッドで作成して返し、通常の NSTextParagraph で良いのであれば、nil を返すことになります
+    // NSTextParagraph は、任意の NSAttributedString から作成できますが、長さは、range.length と一致している必要があります。
     func textContentStorage(_ textContentStorage: NSTextContentStorage, textParagraphWith range: NSRange) -> NSTextParagraph? {
         // このメソッドでは、テキストストレージを直接変更することなく、表示用の属性を注入します。
         var paragraphWithDisplayAttributes: NSTextParagraph? = nil

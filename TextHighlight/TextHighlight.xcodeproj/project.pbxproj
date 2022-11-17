@@ -13,6 +13,7 @@
 		FEC61B99290A57660063C1CD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEC61B97290A57660063C1CD /* Main.storyboard */; };
 		FEC61B9B290A57670063C1CD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FEC61B9A290A57670063C1CD /* Assets.xcassets */; };
 		FEC61B9E290A57670063C1CD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEC61B9C290A57670063C1CD /* LaunchScreen.storyboard */; };
+		FECC53CF29235DF700B0E235 /* TextDocumentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FECC53CE29235DF700B0E235 /* TextDocumentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		FEC61B9A290A57670063C1CD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FEC61B9D290A57670063C1CD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FEC61B9F290A57670063C1CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FECC53CE29235DF700B0E235 /* TextDocumentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextDocumentView.swift; sourceTree = "<group>"; };
 		FEF09033290F66D600A9FB1A /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -61,6 +63,7 @@
 				FEC61B91290A57660063C1CD /* AppDelegate.swift */,
 				FEC61B93290A57660063C1CD /* SceneDelegate.swift */,
 				FEC61B95290A57660063C1CD /* ViewController.swift */,
+				FECC53CE29235DF700B0E235 /* TextDocumentView.swift */,
 				FEC61B97290A57660063C1CD /* Main.storyboard */,
 				FEC61B9A290A57670063C1CD /* Assets.xcassets */,
 				FEC61B9C290A57670063C1CD /* LaunchScreen.storyboard */,
@@ -140,6 +143,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FECC53CF29235DF700B0E235 /* TextDocumentView.swift in Sources */,
 				FEC61B96290A57660063C1CD /* ViewController.swift in Sources */,
 				FEC61B92290A57660063C1CD /* AppDelegate.swift in Sources */,
 				FEC61B94290A57660063C1CD /* SceneDelegate.swift in Sources */,

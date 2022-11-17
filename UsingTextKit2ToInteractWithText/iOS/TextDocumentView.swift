@@ -14,10 +14,17 @@ class TextDocumentLayer: CALayer {
     }
 }
 
+// このTextDocumentViewがUITextViewのかわり。
+// 独自のViewを作っている
+// StoryboardでScrollViewで定義している。そのクラスに設定されている
+
 // NSTextViewportLayoutControllerDelegate
 // ビューポートレイアウトの変更に対応するためにデリゲートが実装するオプションのメソッドです。
 // ViewPortが処理するエリアになる。常にViewPortに表示されている場合はいらない
 
+// UIScrollViewがポイント
+// UITextVeiwは、UIScrollViewを引き継ぎTextKitの機能を追加したコントロール。
+// UIScrollViewから作ることで、オリジナルのTextViewが作れる。
 class TextDocumentView: UIScrollView,
                         NSTextViewportLayoutControllerDelegate,
                         NSTextLayoutManagerDelegate,
@@ -35,10 +42,13 @@ class TextDocumentView: UIScrollView,
         return rect
     }
 
-    func viewportAnchor() -> CGPoint {
-        return CGPoint()
-    }
+//    func viewportAnchor() -> CGPoint {
+//        return CGPoint()
+//    }
 
+    // テキストビューポートレイアウトコントローラがレイアウト処理を終了したときに、フレームワークが呼び出すメソッド。
+    // ビューポートに要素を配置する前にレイアウトコントローラがwillLayoutメソッドを呼び出します。
+    // ここで ビューまたはレイヤーのコンテンツをクリアにするなど、レイアウトの準備のための設定を行います。
     func textViewportLayoutControllerWillLayout(_ controller: NSTextViewportLayoutController) {
         contentLayer.sublayers = nil
         CATransaction.begin()
@@ -61,9 +71,11 @@ class TextDocumentView: UIScrollView,
             return (layer, true)
         }
     }
-                            
+                    
+    // レイアウトコントローラーがUIにテキストレイアウトの断片をレイアウトするときにフレームワークが呼び出すメソッド。
     func textViewportLayoutController(_ textViewportLayoutController: NSTextViewportLayoutController,
                                       configureRenderingSurfaceFor textLayoutFragment: NSTextLayoutFragment) {
+        
         let (textLayoutFragmentLayer, didCreate) = findOrCreateLayer(textLayoutFragment)
         if !didCreate {
             let oldPosition = textLayoutFragmentLayer.position
@@ -289,6 +301,8 @@ class TextDocumentView: UIScrollView,
         // attribute(_:at:effectiveRange:)
         // 指定されたインデックスにある文字の指定された名前の属性に対応する値を返し、
         // 参照として、その属性が適用される範囲を返す。
+        // commentDepthValueには数字が入る
+        
         let commentDepthValue = textContentStorage!.textStorage!.attribute(.commentDepth, at: index, effectiveRange: nil) as! NSNumber?
         if commentDepthValue != nil {
             // textElementは、NSTextElement型→ここでテキスト属性

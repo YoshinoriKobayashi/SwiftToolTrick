@@ -51,8 +51,6 @@ func setAttribute(uiView: UITextView) -> Bool{
     
     // {filter:...}
     // ??? に置換
-    // 背景をグレー
-    //
     
     var pattern = "\\{filter:.*?\\}"
     var regex = try! NSRegularExpression(pattern: pattern)

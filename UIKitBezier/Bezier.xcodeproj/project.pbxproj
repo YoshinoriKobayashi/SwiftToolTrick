@@ -24,6 +24,7 @@
 		FEE156AE29D416350077F50F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FEE156B129D416350077F50F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FEE156B329D416350077F50F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FEE156B929D423D60077F50F /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +64,7 @@
 				FEE156AE29D416350077F50F /* Assets.xcassets */,
 				FEE156B029D416350077F50F /* LaunchScreen.storyboard */,
 				FEE156B329D416350077F50F /* Info.plist */,
+				FEE156B929D423D60077F50F /* README.md */,
 			);
 			path = Bezier;
 			sourceTree = "<group>";

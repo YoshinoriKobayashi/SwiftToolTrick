@@ -21,12 +21,6 @@ import UIKit
 //print(attributedSentence)
 
 
-
-
-//extension NSAttributedString {
-//    public static let roundedBackgroundColor: NSAttributedString.Key
-//}
-//
 //let attributedString = NSMutableAttributedString(string: "Hello World")
 //attributedString.addAttribute(.roundedBackgroundColor, value: UIColor.red, range: NSRange(location: 0, length: attributedString.length))
 
@@ -38,18 +32,37 @@ import UIKit
 //attrString.addAttribute(myAttributeKey, value: "My custom value", range: NSRange(location: 0, length: string.utf16.count))
 
 // カスタムキー
-// _Commonに配置すればいい。
-struct EDAttributedString {
-    // 属性キーの追加
-    public static let roundedBackgroundColor = NSAttributedString.Key("roundedBackgroundColor")
+// _Commonに配置すればいい??
+//class EDAttributedString {
+//    // 属性キーの追加
+//    public static let roundedBackgroundColor = NSAttributedString.Key("roundedBackgroundColor")
+//}
+
+//extension NSAttributedString {
+//    public static let roundedBackgroundColor = NSAttributedString.Key("roundedBackgroundColor")
+//}
+
+
+// 独自の属性キーを作成するには、NSAttributedStringに拡張を行います。次はその例です
+// ここで、独自の属性キーを表す拡張を作成しています。そして、この拡張を使用してNSAttributedStringのインスタンスに属性を追加することができます。
+extension NSAttributedString.Key {
+    static let roundedBackgroundColor = NSAttributedString.Key("myAttributeKey")
 }
 
-let attributedString = NSMutableAttributedString(string: "Hello World")
-// カスタムキーに配色を指定
-attributedString.addAttribute(EDAttributedString.roundedBackgroundColor, value: UIColor.red, range: NSRange(location: 0, length: attributedString.length))
+let string = "Hello, World!"
+let attrString = NSMutableAttributedString(string: string)
+attrString.addAttribute(.roundedBackgroundColor, value:UIColor.red , range: NSRange(location: 0, length: string.utf16.count))
 
+
+//
+//// ViewModelに設置
+//let attributedString = NSMutableAttributedString(string: "Hello World")
+//// カスタムキーに配色を指定
+//attributedString.addAttribute(., value: UIColor.red, range: NSRange(location: 0, length: attributedString.length))
+
+// UITextのときにカスタムキーがあれば背景を描画する。
 // キーを取り出して装飾する
-attributedString.enumerateAttribute(EDAttributedString.roundedBackgroundColor, in: NSRange(0..<attributedString.length)) { value, range, stop in
+attrString.enumerateAttribute(.roundedBackgroundColor, in: NSRange(0..<attrString.length)) { value, range, stop in
     if let color = value as? UIColor {
         print("背景を角丸にして、colorで色を塗る:", color)
     }

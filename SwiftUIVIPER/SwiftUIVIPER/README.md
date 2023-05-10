@@ -1,4 +1,4 @@
-#  SwiftUIでVIOERの例
+#  SwiftUIでVIPERの例
 
 
 ### View

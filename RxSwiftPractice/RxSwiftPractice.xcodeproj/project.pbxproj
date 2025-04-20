@@ -17,10 +17,12 @@
 		FE1A11C32DB49B9C00AA6C50 /* RxSwift-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = FE1A11C22DB49B9C00AA6C50 /* RxSwift-Dynamic */; };
 		FE1A11C52DB49B9C00AA6C50 /* RxTest in Frameworks */ = {isa = PBXBuildFile; productRef = FE1A11C42DB49B9C00AA6C50 /* RxTest */; };
 		FE1A11C72DB49B9C00AA6C50 /* RxTest-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = FE1A11C62DB49B9C00AA6C50 /* RxTest-Dynamic */; };
+		FE84BD9E2DB49CD2006A4A9D /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = FE84BD9D2DB49CD2006A4A9D /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		FE1A11A12DB49B5800AA6C50 /* RxSwiftPractice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxSwiftPractice.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FE84BD9D2DB49CD2006A4A9D /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -55,6 +57,7 @@
 		FE1A11982DB49B5800AA6C50 = {
 			isa = PBXGroup;
 			children = (
+				FE84BD9D2DB49CD2006A4A9D /* README.md */,
 				FE1A11A32DB49B5800AA6C50 /* RxSwiftPractice */,
 				FE1A11A22DB49B5800AA6C50 /* Products */,
 			);
@@ -145,6 +148,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE84BD9E2DB49CD2006A4A9D /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
